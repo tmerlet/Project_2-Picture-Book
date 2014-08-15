@@ -69,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20140815153953) do
     t.string   "name"
     t.string   "username"
     t.date     "dob"
-    t.text     "photo"
+    t.text     "profile_image"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
   end

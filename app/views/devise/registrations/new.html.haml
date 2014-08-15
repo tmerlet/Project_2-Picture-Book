@@ -13,6 +13,10 @@
     = f.label :dob
     %br/
     = f.date_select :dob
+  %div 
+    = f.label :profile_image
+    %br/
+    = f.file_field :profile_image
   %div
     = f.label :password
     %br/
@@ -21,6 +25,5 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
-
   %div= f.submit "Sign up"
 = render "devise/shared/links"

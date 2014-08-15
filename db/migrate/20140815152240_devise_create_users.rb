@@ -23,7 +23,7 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.string :name
       t.string :username
       t.date :dob
-      t.text :photo
+      t.text :profile_image
 
 
       ## Confirmable
