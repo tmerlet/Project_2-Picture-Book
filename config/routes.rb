@@ -1,4 +1,6 @@
 Photoapp::Application.routes.draw do
+  devise_for :users
+
   resources :ratings
 
 
@@ -12,6 +14,9 @@ Photoapp::Application.routes.draw do
 
 
   resources :albums
+
+  
+  root to: "albums#index"
 
 
   # The priority is based upon order of creation:
