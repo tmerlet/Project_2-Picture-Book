@@ -6,6 +6,13 @@ gem 'rails', '3.2.17'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
+gem 'haml-rails'
+gem 'devise'
+gem 'cancan'
+gem 'carrierwave'
+gem 'ransack'
+gem 'rmagick', :require => 'RMagick'
+gem 'kaminari'
 
 
 # Gems used only for assets and not required
@@ -13,6 +20,15 @@ gem 'pg'
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
+
+  group :development do
+    gem 'pry-rails'
+    gem 'pry-stack_explorer'
+    gem 'binding_of_caller'
+    gem 'better_errors'  
+    gem 'meta_request'
+  end
+
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
