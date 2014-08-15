@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %p 
-  = image_tag @photo.photo.url
+  = image_tag(@photo.photo.thumb.url), @photo.photo.detail.url
 %p
   %b Description:
   = @photo.description
