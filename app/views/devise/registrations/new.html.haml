@@ -6,6 +6,14 @@
     %br/
     = f.email_field :email, autofocus: true
   %div
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %div
+    = f.label :dob
+    %br/
+    = f.date_select :dob
+  %div
     = f.label :password
     %br/
     = f.password_field :password, autocomplete: "off"
@@ -13,5 +21,6 @@
     = f.label :password_confirmation
     %br/
     = f.password_field :password_confirmation, autocomplete: "off"
+
   %div= f.submit "Sign up"
 = render "devise/shared/links"
