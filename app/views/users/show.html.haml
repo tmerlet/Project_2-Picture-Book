@@ -1,0 +1,35 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @user.name
+%p
+  %b Date of Birth:
+  = @user.dob
+%p
+  = image_tag @user.profile_image.url
+
+
+
+
+
+/ Might be userful at a later time
+/ %p 
+/   = link_to image_tag(@recipe.recipe_image.thumb.url), @recipe.recipe_image.detail.url
+
+
+
+
+/ %p
+/   %b Content:
+/   = @comment.content
+/ %p
+/   %b Photo:
+/   = @comment.photo_id
+/ %p
+/   %b User:
+/   = @comment.user_id
+
+/ = link_to 'Edit', edit_comment_path(@comment)
+/ \|
+/ = link_to 'Back', comments_path

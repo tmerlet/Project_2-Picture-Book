@@ -1,5 +1,9 @@
 Photoapp::Application.routes.draw do
+  
   devise_for :users
+  # additional route to create the user show page -TM
+  resources :users, :only => [:show]
+
 
   resources :ratings
 
