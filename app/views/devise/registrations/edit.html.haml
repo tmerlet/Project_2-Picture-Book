@@ -15,7 +15,8 @@
     = f.text_field :name
   %div 
     = f.label :profile_image
-    = image_tag @user.profile_image.url
+    %br/
+    = image_tag @user.profile_image.thumb.url
     %br/
     = f.file_field :profile_image
   %div

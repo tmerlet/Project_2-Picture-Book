@@ -11,6 +11,8 @@
     - if user_signed_in?
       = current_user.email
       %br/
+      = link_to "View current profile", "/users/#{current_user.id}"
+      %br/
       = link_to "Edit profile", edit_user_registration_path
       %br/
       = link_to "Logout", destroy_user_session_path, method: :delete
