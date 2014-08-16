@@ -3,6 +3,7 @@ class CreatePhotos < ActiveRecord::Migration
     create_table :photos do |t|
       t.string :description
       t.string :location
+      t.text :image
 
       t.timestamps
     end
