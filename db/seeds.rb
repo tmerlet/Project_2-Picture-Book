@@ -7,13 +7,58 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+user1 = User.create(name: "Piers", email: "piers@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'piersprofilepic.jpg')))
+
+user2 = User.create(name: "Alex", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'alexprofilepic.jpg')))
+
+user3 = User.create(name: "Toby", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'tobyprofilepic.jpg'))) 
+
+album1 = Album.create(name: "Funny business", description: "Load of random stuff")
+
+album2 = Album.create(name: "My favourit holiday", description: "A weekend in paris")
+
+album3 = Album.create(name: "Goofing around", description: "A night out to remember")
+
 photo1 = Photo.create(description: "description 1", location: "location 1 ", image: "image 1")
 photo2 = Photo.create(description: "description 2", location: "location 2 ", image: "image 2")
 photo3 = Photo.create(description: "description 3", location: "location 3 ", image: "image 3")
-photo4 = Photo.create(description: "description 3", location: "location 3 ", image: "image 3")
 
-User1 = User.create(name: "Piers", email: "piers@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'piersprofilepic.jpg')))
+tag1 = Tag.create(name: "fun")
+tag2 = Tag.create(name: "cool")
+tag3 = Tag.create(name: "sport")
 
-User2 = User.create(name: "Alex", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'alexprofilepic.jpg')))
+comment1 = Comment.create(content: "radical man, love your stuff")
+comment2 = Comment.create(content: "groovy dude")
+comment3 = Comment.create(content: "pimping!")
 
-User3 = User.create(name: "Toby", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'tobyprofilepic.jpg'))) 
+rating1 = Rating.create(status: "negative")
+rating2 = Rating.create(status: "neutral")
+rating3 = Rating.create(status: "positive")
+
+photo1.tags << tag1
+photo2.tags << tag2
+photo3.tags << tag3
+
+album1.photos << photo1
+album2.photos << photo2
+album3.photos << photo3
+
+user1.albums << album1
+user2.albums << album2
+user3.albums << album3
+
+user1.comments << comment1
+user2.comments << comment2
+user3.comments << comment3
+
+photo1.comments << comment3
+photo2.comments << comment1
+photo3.comments << comment2
+
+user1.ratings << rating1
+user2.ratings << rating2
+user3.ratings << rating3
+
+photo1.ratings << rating3
+photo2.ratings << rating1
+photo3.ratings << rating2
