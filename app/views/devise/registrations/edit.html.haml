@@ -10,6 +10,15 @@
     %div
       Currently waiting confirmation for: #{resource.unconfirmed_email}
   %div
+    = f.label :name
+    %br/
+    = f.text_field :name
+  %div 
+    = f.label :profile_image
+    = image_tag @user.profile_image.url
+    %br/
+    = f.file_field :profile_image
+  %div
     = f.label :password
     %i (leave blank if you don't want to change it)
     %br/

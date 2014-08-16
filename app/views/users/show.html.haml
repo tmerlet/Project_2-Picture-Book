@@ -7,7 +7,7 @@
   %b Date of Birth:
   = @user.dob
 %p
-  = link_to image_tag(@user.profile_image.thumb.url), @user.profile_image.detail.url
+  = image_tag @user.profile_image.medium.url
 
 
 
