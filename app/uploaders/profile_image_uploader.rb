@@ -32,9 +32,22 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   # end
 
   # Create different versions of your uploaded files:
-  # version :thumb do
-  #   process :resize_to_fit => [50, 50]
-  # end
+  
+  # 1) thumb:
+  version :thumb do
+    process :resize_to_fit => [50, 50]
+  end  
+
+  # 2) medium:
+  version :medium do
+    process :resize_to_fit => [200, 200]
+  end
+
+  # 3) large:
+  version :large do
+    process :resize_to_fit => [400, 400]
+  end
+
 
   # Profile picture medium size
   # Create different versions of your uploaded files:
