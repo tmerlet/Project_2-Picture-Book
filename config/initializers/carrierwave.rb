@@ -5,6 +5,6 @@ CarrierWave.configure do |config|
     :aws_secret_access_key => ENV['aws_secret_access_key'],  # required
     :region  => 'eu-west-1',  # optional, defaults to 'us-east-1'
   }
-  config.fog_directory  = ENV['WDI_S3_BUCKET']  # required
+  config.fog_directory  = ENV['WDI_PROJECT2_BUCKET']  # required
   config.fog_public  = true  # optional, defaults to true
 end
