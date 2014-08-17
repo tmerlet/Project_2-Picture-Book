@@ -15,5 +15,10 @@
   .field
     = f.label :description
     = f.text_field :description
+
+= form_for @photo do |f|
+  .field
+    = f.label :image
+    = f.file_field :image
   .actions
     = f.submit 'Save'
