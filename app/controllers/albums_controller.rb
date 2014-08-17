@@ -2,9 +2,8 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    # PK: setting up ransack search
-    @q = Album.search(params[:q])
-    @albums = @q.result(distinct: true)
+    # PK: Check out the application controller for the method for this.
+
 
     respond_to do |format|
       format.html # index.html.erb
