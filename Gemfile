@@ -13,7 +13,7 @@ gem 'carrierwave'
 gem 'ransack'
 gem 'rmagick', :require => 'RMagick'
 gem 'kaminari'
-gem "fog", "~> 1.3.1" # required for Amazon Servers
+gem "fog", "~> 1.3.1" # required for Amazon Servers => alex
 
 
 # Gems used only for assets and not required
