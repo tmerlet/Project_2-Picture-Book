@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   def index
     # PK: setting up ransack search
     @q = Album.search(params[:q])
-    @albums = @q.result.order(:created_at).page(params :page)
+    @albums = @q.result(distinct: true)
 
     respond_to do |format|
       format.html # index.html.erb

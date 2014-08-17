@@ -5,15 +5,20 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
-  %header
-    %a{:href => "/"}
-      %h1 PhotoApp
-    %nav
+
   %body
     %p.notice= notice
     %p.alert= alert
    
   %section.nav_bar   
+    %nav
+    %br
+    %a{:href => "/"}
+      %h1 PhotoApp
+    %br/
+    = search_form_for @q do |f|
+      = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "album, user, username"
+      = f.submit
     %br/
     = link_to "Albums", albums_path
     %br/
@@ -22,7 +27,7 @@
     = link_to "Tags", tags_path
     %br/
     = link_to "Home", albums_path 
-    /to be changed at a later time to route to login page
+    /AW to be changed at a later time to route to login page
     %br/
 
     - if user_signed_in?
