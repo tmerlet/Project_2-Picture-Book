@@ -1,8 +1,6 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @user.name
+%h1= @user.name
 %p
   %b Date of Birth:
   = @user.dob
@@ -10,13 +8,9 @@
   = image_tag @user.profile_image.medium.url
 %p
   %b Albums:
-  - @albums.each do |album|
-    %li= link_to album.name, album
-  
-  
-
-
-
+  = @albums.each do |album|
+    = if album.user_id == @user.id
+      %li= link_to album.name, album
 
 
 / Might be userful at a later time
