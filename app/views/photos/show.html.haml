@@ -1,9 +1,8 @@
 %p#notice= notice
 
-%p 
 %p
   %b Photo ref: (photo will appear here when aws works)
-  = @photo.image
+  = image_tag @photo.image
 %p
   %b Description:
   = @photo.description
