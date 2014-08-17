@@ -2,7 +2,9 @@ class AlbumsController < ApplicationController
   # GET /albums
   # GET /albums.json
   def index
-    @albums = Album.all
+    # PK: setting up ransack search
+    @q = Album.search(params[:q])
+    @albums = @q.result.order(:created_at).page(params :page)
 
     respond_to do |format|
       format.html # index.html.erb
