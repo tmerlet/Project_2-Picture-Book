@@ -9,6 +9,10 @@
 %p
   %b Description:
   = @album.description
+%p
+  %b Photos:
+  - @photos.each do |photo|
+    %li= link_to photo.image, photo
 
 = link_to 'Edit', edit_album_path(@album)
 \|

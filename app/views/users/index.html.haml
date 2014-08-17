@@ -1,0 +1,15 @@
+%h1 All Users
+
+%table
+  %tr
+    %th User
+    %th User Name
+    %th Profile Image
+
+  - @users.each do |user|
+    %tr
+      %td= link_to user.name, user
+      %td= user.username
+      %td= user.profile_image
+
+%br
