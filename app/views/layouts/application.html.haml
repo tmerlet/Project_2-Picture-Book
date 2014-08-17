@@ -12,6 +12,19 @@
   %body
     %p.notice= notice
     %p.alert= alert
+   
+  %section.nav_bar   
+    %br/
+    = link_to "Albums", albums_path
+    %br/
+    = link_to "Photos", photos_path
+    %br/
+    = link_to "Tags", tags_path
+    %br/
+    = link_to "Home", albums_path 
+    /to be changed at a later time to route to login page
+    %br/
+
     - if user_signed_in?
       = current_user.email
       %br/
@@ -24,7 +37,5 @@
       = link_to "Sign up", new_user_registration_path
       %br/
       = link_to "Login", new_user_session_path
-    = yield
 
-
-    
+  = yield
