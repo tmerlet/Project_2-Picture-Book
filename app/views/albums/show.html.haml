@@ -10,9 +10,13 @@
   %b Description:
   = @album.description
 %p
-  %b Photos:
-  - @photos.each do |photo|
-    %li= link_to photo.image, photo
+%b
+  Photos:
+  #album_display
+    - @photos.each do |photo|
+      - if photo.album_id == @album.id
+        #album_photos
+          = link_to image_tag(photo.image), photo.image.detail.url
 
 = link_to 'Edit', edit_album_path(@album)
 \|

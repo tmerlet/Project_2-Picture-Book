@@ -8,8 +8,8 @@
   = image_tag @user.profile_image.medium.url
 %p
   %b Albums:
-  = @albums.each do |album|
-    = if album.user_id == @user.id
+  - @albums.each do |album|
+    - if album.user_id == @user.id
       %li= link_to album.name, album
 
 

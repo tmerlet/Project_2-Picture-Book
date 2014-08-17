@@ -17,6 +17,7 @@ class AlbumsController < ApplicationController
     @album = Album.find(params[:id])
     @photos = Photo.all
 
+
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @album }
@@ -37,6 +38,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    @photo = Photo.find(params[:id])
   end
 
   # POST /albums
