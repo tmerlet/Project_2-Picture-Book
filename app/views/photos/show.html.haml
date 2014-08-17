@@ -10,6 +10,12 @@
   %b Location:
   = @photo.location
 
+%p 
+  %b Comments:
+  %input#new-comment{:placeholder => "?", :type => "text"}
+  %ul#comment-list
+
+
 / %p
 /   %b Comments:
 /   %input id="newcomment" placeholder="Type a comment" type="text"

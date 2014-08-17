@@ -42,6 +42,8 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
 
+    # binding.pry
+
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
