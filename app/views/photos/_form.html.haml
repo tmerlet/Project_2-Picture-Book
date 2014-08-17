@@ -5,7 +5,13 @@
       %ul
         - @photo.errors.full_messages.each do |msg|
           %li= msg
+<<<<<<< Updated upstream
 
+=======
+  .field
+    = f.label :image
+    = f.file_field :image
+>>>>>>> Stashed changes
   .field
     = f.label :description
     = f.text_field :description
