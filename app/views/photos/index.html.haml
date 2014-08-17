@@ -2,6 +2,7 @@
 
 %table
   %tr
+    %th Image ref
     %th Description
     %th Location
     %th
@@ -10,6 +11,7 @@
 
   - @photos.each do |photo|
     %tr
+      %td= photo.image
       %td= photo.description
       %td= photo.location
       %td= link_to 'Show', photo
