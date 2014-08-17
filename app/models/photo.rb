@@ -5,6 +5,7 @@ class Photo < ActiveRecord::Base
   has_many :comments
   belongs_to :album
 
-
   attr_accessible :description, :location, :image
+  mount_uploader :image, AlbumPhotoUploader
+
 end

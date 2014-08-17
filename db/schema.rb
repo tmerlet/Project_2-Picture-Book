@@ -32,8 +32,12 @@ ActiveRecord::Schema.define(:version => 20140815153953) do
   create_table "photos", :force => true do |t|
     t.string   "description"
     t.string   "location"
+<<<<<<< HEAD
     t.text     "image"
     t.integer  "album_id"
+=======
+    t.string   "photo"
+>>>>>>> 7b3e1e08e34551f707abdd45d1bca99869102289
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
