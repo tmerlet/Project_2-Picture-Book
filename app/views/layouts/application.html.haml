@@ -15,14 +15,15 @@
       tags = #{raw Tag.all.map{|tag| tag.name}.to_json};
       photos = #{raw Photo.all.map{|photo| photo.location}.to_json};
       window.all = users.concat(tags).concat(albums).concat(photos);
-      console.log(window.all);
+      /console.log(window.all);
       $( "#autocomplete" ).autocomplete({
       source: window.all,
-      select: function( event, ui ){
-      autocomplete.autocompleteAjax(ui)
-      }
-      });
+      / select: function( event, ui ){
+      / autocomplete.autocompleteAjax(ui)
+      / }
       })
+      })
+      
 
   %body
     %p.notice= notice
