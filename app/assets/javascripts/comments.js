@@ -3,7 +3,7 @@ function destroyComment(){
   $this = $(this)
   commentId = $this.data("id");
   request("DELETE", "/comments/"+commentId, null).success(function(data){
-      $this.parent().remove()
+      $this.parent().parent().remove()
     })
 }
 
@@ -11,8 +11,8 @@ function destroyComment(){
 
 function getComments(){
   request("GET", "/comments", null).success(function(data){
-      $.each(data, function(i, task){
-        appendNewComment(task)
+      $.each(data, function(i, comment){
+        appendNewComment(comment)
       })
   })
 }
@@ -34,16 +34,15 @@ function createComment(){
       photo_id: $("#currentphoto").val()
     }
   }).success(function(data){
-    debugger
     $('#new-comment').val("")
     appendNewComment(data)
   })
-}
+} 
 
 function appendNewComment(data){
   
-  $('<li><label><img src='+ data.user.profile_image.thumb.url +'> says: </label><label>'+ data.user.name +' says: </label><label>'+ data.content +'</label>'+
-      '<button class="destroy" data-id="'+ data.id +'"><i class="fa fa-times"></i></button></li>').prependTo("#comment-list")
+  $('<tr><td><img src='+ data.user.profile_image.thumb.url +'></td><td>'+ data.user.name +' says: </br>'+ data.content +'</td>'+
+    '<td><button class="destroy" data-id="'+ data.id +'"><i class="fa fa-times"></i></button></td></tr>').prependTo("#comment-list")
   
   // REFERENCE CODE TO REFER TO LATER TO INCREASE FUNCTIONALITY
   // $('<li class="'+ (data.done == true ? "completed" : "") + '">'+
