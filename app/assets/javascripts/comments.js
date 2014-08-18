@@ -11,7 +11,7 @@ function request(method, url, data){
 
 
 function createComment(){
-  debugger
+  // debugger
   request("POST", "/comments", {
     comment:{
       content: $("#new-comment").val()
