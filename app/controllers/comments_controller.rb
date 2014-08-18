@@ -42,7 +42,12 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(params[:comment])
 
-    # binding.pry
+    # need to stop people from commenting if they are not logged in TM
+    @comment.user_id = current_user.id
+    # the following line may be a red herring TM
+    # @comment.photo_id = params[:id]
+
+    binding.pry
 
     respond_to do |format|
       if @comment.save
