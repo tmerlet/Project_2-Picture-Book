@@ -41,8 +41,8 @@ function createComment(){
 }
 
 function appendNewComment(data){
-
-  $('<li><label>'+ data.user.name +' says: </label><label>'+ data.content +'</label>'+
+  
+  $('<li><label><img src='+ data.user.profile_image.thumb.url +'> says: </label><label>'+ data.user.name +' says: </label><label>'+ data.content +'</label>'+
       '<button class="destroy" data-id="'+ data.id +'"><i class="fa fa-times"></i></button></li>').prependTo("#comment-list")
   
   // REFERENCE CODE TO REFER TO LATER TO INCREASE FUNCTIONALITY

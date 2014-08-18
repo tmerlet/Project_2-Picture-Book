@@ -35,7 +35,7 @@ class ProfileImageUploader < CarrierWave::Uploader::Base
   
   # 1) thumb:
   version :thumb do
-    process :resize_to_fit => [100, 100]
+    process :resize_to_fit => [50, 0]
   end  
 
   # 2) medium:
