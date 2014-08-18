@@ -17,8 +17,10 @@
     = f.text_field :description
 
 = form_for @photo do |f|
-  .field
+  #uploader
     = f.label :image
     = f.file_field :image
   .actions
     = f.submit 'Save'
+
+= render 'uploader'
