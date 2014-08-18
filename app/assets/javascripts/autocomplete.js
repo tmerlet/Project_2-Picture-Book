@@ -1,9 +1,13 @@
-$(function(){
-  autoComplete();
+$(document).ready(function(){
+  autocomplete = {
+    autocompleteAjax: function(ui){
+      console.log('autocompleteAjax', ui)
+    }
+  }
+  $("#autocomplete").submit(postAutocomplete) 
 })
 
-function autoComplete(){
-  $( "#autocomplete" ).autocomplete({
-    source: [ "c++", "java", "php", "coldfusion", "javascript", "asp", "ruby" ]
-  });
+postAutocomplete = function(event){
+  event.preventDefault();
+
 }
