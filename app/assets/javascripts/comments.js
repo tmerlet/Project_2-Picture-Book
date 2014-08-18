@@ -10,7 +10,7 @@ function destroyComment(){
 
 
 function getComments(){
-  request("GET", "/comments", null).success(function(data){
+  request("GET", "/comments?imageId="+ $('.image-container').data("photo-id"), null).success(function(data){
       $.each(data, function(i, comment){
         appendNewComment(comment)
       })

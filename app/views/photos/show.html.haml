@@ -1,8 +1,9 @@
 %p#notice= notice
 
-%p
+%p.image-container{:data => {:photo_id => "#{@photo.id}"}}
   %b Image
   = image_tag @photo.image
+
 
 %i ."fa fa-thumbs-o-up"></i> fa-thumbs-o-up
 
