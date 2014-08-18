@@ -28,6 +28,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
+    @photo = Photo.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,6 +46,7 @@ class AlbumsController < ApplicationController
   # POST /albums.json
   def create
     @album = Album.new(params[:album])
+    @photo = Photo.new(params[:photo])
 
     respond_to do |format|
       if @album.save
