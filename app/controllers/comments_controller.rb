@@ -46,8 +46,6 @@ class CommentsController < ApplicationController
     # the following line may be a red herring TM
     # @comment.photo_id = params[:id]
 
-    binding.pry
-
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
