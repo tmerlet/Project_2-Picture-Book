@@ -1,3 +1,7 @@
+* {
+  margin-bottom: 30px;
+}
+
 #album_display {
   width: 900px;
 }
@@ -9,11 +13,8 @@
 }
 
 .home_page {
-/*  background: url("home.png");
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: cover;*/
-  background: url(home.png) no-repeat center center fixed; 
+  background: url('home.png') fixed;
+  /*background: url('home.png'); */
   background-size: cover;
   left: 0;
   line-height: 200px;
@@ -23,4 +24,22 @@
   top: 50%;
   width: 100%;
   text-align: center;
+  padding-bottom: 40px;
+}
+
+#home_box {
+  border: black solid 10px;
+  background: white;
+  opacity: 0.6;
+  border-radius: 10px;
+  font-color: red;
+  width: 200px;
+  margin: auto;
+  text-decoration: none;
+  font-color: black;
+}
+
+#home_box a{
+  text-decoration: none;
+  font-color: black;
 }
