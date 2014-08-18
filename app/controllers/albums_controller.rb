@@ -63,6 +63,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1.json
   def update
     @album = Album.find(params[:id])
+    @photo = Photo.find(params[:id])
 
     respond_to do |format|
       if @album.update_attributes(params[:album])

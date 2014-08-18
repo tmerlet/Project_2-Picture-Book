@@ -1,6 +1,8 @@
 class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
+  before_filter :the_album
+  
   def index
     @photos = Photo.all
 
@@ -26,6 +28,7 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
+    # @album = Album.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,7 +44,7 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @photo = @album.photos.new(params[:photo])
 
     respond_to do |format|
       if @photo.save
@@ -81,4 +84,10 @@ class PhotosController < ApplicationController
       format.json { head :no_content }
     end
   end
+end
+
+private
+
+def the_album
+  @album = Album.find(params["album_id"])
 end

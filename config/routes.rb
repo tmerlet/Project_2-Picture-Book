@@ -13,10 +13,12 @@ Photoapp::Application.routes.draw do
   resources :tags
 
 
-  resources :photos
+  
 
 
-  resources :albums
+  resources :albums do 
+    resources :photos
+  end  
 
   
   root to: "albums#index"
