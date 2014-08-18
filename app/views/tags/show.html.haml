@@ -4,6 +4,12 @@
   %b Name:
   = @tag.name
 
+%p
+  %b Photo(s): (does work just no images to display)
+  - @tag.photos.each do |pt|
+    = link_to pt.image, pt
+
+
 = link_to 'Edit', edit_tag_path(@tag)
 \|
 = link_to 'Back', tags_path

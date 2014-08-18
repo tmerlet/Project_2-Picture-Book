@@ -36,14 +36,18 @@ rating2 = Rating.create(status: "neutral")
 rating3 = Rating.create(status: "positive")
 
 photo1.tags << tag1
+photo2.tags << tag1
 photo2.tags << tag2
 photo3.tags << tag3
 
 album1.photos << photo1
+album1.photos << photo2
+album1.photos << photo3
 album2.photos << photo2
 album3.photos << photo3
 
 user1.albums << album1
+user1.albums << album2
 user2.albums << album2
 user3.albums << album3
 
