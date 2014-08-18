@@ -13,7 +13,7 @@
 %p 
   %b Comments:
   %input#new-comment{:placeholder => "?", :type => "text"}
-  %input#currentphoto{:type=>"hidden", :photo_id => params[:id], :name=>:photo_id}
+  %input#currentphoto{:type=>"hidden", name: :photo_id, value: "#{@photo.id}"}
   %ul#comment-list
 
 

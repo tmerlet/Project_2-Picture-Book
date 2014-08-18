@@ -40,10 +40,9 @@ class CommentsController < ApplicationController
   # POST /comments
   # POST /comments.json
   def create
-    @comment = Comment.new(params[:comment])
+    @comment = current_user.comments.new(params[:comment])
 
     # need to stop people from commenting if they are not logged in TM
-    @comment.user_id = current_user.id
     # the following line may be a red herring TM
     # @comment.photo_id = params[:id]
 
