@@ -14,7 +14,8 @@ function createComment(){
   // debugger
   request("POST", "/comments", {
     comment:{
-      content: $("#new-comment").val()
+      content: $("#new-comment").val(),
+      photo_id: $("#currentphoto").val()
     }
   }).success(function(data){
     $('#new-comment').val("")
