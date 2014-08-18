@@ -1,3 +1,5 @@
+ruby "2.1.2"
+
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.17'
@@ -35,6 +37,10 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 gem 'jquery-rails'
