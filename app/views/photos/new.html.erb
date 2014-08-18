@@ -1,6 +1,6 @@
 %h1 New photo
 
-<%= form_for [@album], :remote => true do |f| %>
+<%= form_for [@album, @photo], :remote => true do |f| %>
 
 Upload Photos: 
     <input id="fileupload" type="file" name="photo[image]" multiple>
@@ -20,6 +20,9 @@ Upload Photos:
             }
         });
     });
+
+    // tried do .on('submit')
+    // but multiple photos do get saved to the db
     </script>
     </br>
     <%= f.submit 'submit' %>

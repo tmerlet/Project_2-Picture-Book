@@ -1,4 +1,3 @@
-//PK this is just some placeholder css for the nav bar. We will need to move/edit it when we come to do the styling in earnest.
 
 ul {
   text-align: left;
@@ -24,7 +23,10 @@ ul li {
   -o-transition: all 0.2s;
   transition: all 0.2s;
 }
-
+ul li:hover {
+  background: #555;
+  color: #fff;
+}
 ul li ul {
   padding: 0;
   position: absolute;
@@ -48,4 +50,10 @@ ul li ul li {
   display: block; 
   color: #fff;
   text-shadow: 0 -1px 0 #000;
+}
+ul li ul li:hover { background: #666; }
+ul li:hover ul {
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
