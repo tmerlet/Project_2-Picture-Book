@@ -2,11 +2,11 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    @comments = Comment.where(photo_id: params[:imageId])
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @comments }
+      format.json { render json: @comments, :include => [:user] }
     end
   end
 
@@ -49,7 +49,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment, notice: 'Comment was successfully created.' }
-        format.json { render json: @comment, status: :created, location: @comment }
+        format.json { render json: @comment, status: :created, location: @comment, :include => [:user] }
       else
         format.html { render action: "new" }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

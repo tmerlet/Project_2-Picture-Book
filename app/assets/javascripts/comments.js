@@ -1,4 +1,20 @@
 
+function destroyComment(){
+  $this = $(this)
+  commentId = $this.data("id");
+  request("DELETE", "/comments/"+commentId, null).success(function(data){
+      $this.parent().parent().remove()
+    })
+}
+
+
+function getComments(){
+  request("GET", "/comments?imageId="+ $('.image-container').data("photo-id"), null).success(function(data){
+      $.each(data, function(i, comment){
+        appendNewComment(comment)
+      })
+  })
+}
 
 function request(method, url, data){
   return $.ajax({
@@ -9,9 +25,8 @@ function request(method, url, data){
   })
 }
 
-
 function createComment(){
-  // debugger
+
   request("POST", "/comments", {
     comment:{
       content: $("#new-comment").val(),
@@ -21,12 +36,13 @@ function createComment(){
     $('#new-comment').val("")
     appendNewComment(data)
   })
-}
+} 
 
 function appendNewComment(data){
-
-  $('<li><label>'+ data.content +'</label></li>').prependTo("#comment-list")
-
+  
+  $('<tr><td><img src='+ data.user.profile_image.thumb.url +'></td><td>'+ data.user.name +' says: </br>'+ data.content +'</td>'+
+    '<td><button class="destroy" data-id="'+ data.id +'"><i class="fa fa-times"></i></button></td></tr>').prependTo("#comment-list")
+  
   // REFERENCE CODE TO REFER TO LATER TO INCREASE FUNCTIONALITY
   // $('<li class="'+ (data.done == true ? "completed" : "") + '">'+
   //     '<input class="toggle" type="checkbox" data-id="'+ data.id +'" '+ (data.done == true ? 'checked="checked"' : "") + '>'+
@@ -41,4 +57,7 @@ $(function(){
   $('#new-comment').on('keypress', function (event) {
     if(event.which == '13') createComment()
   });
+  $('#comment-list').on('click', ".destroy", destroyComment);
+  getComments();
 })
+

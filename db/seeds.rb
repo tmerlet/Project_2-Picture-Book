@@ -19,9 +19,9 @@ album2 = Album.create(name: "My favourit holiday", description: "A weekend in pa
 
 album3 = Album.create(name: "Goofing around", description: "A night out to remember")
 
-photo1 = Photo.create(description: "description 1", location: "location 1 ", image: "image 1")
-photo2 = Photo.create(description: "description 2", location: "location 2 ", image: "image 2")
-photo3 = Photo.create(description: "description 3", location: "location 3 ", image: "image 3")
+photo1 = Photo.create(description: "description 1", location: "location 1 ", image: "mountain01.jpg")
+photo2 = Photo.create(description: "description 2", location: "location 2 ", image: "mountain02.jpg")
+photo3 = Photo.create(description: "description 3", location: "location 3 ", image: "mountain03.jpg")
 
 tag1 = Tag.create(name: "fun")
 tag2 = Tag.create(name: "cool")

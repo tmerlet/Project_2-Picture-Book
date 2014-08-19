@@ -1,6 +1,6 @@
 %p#notice= notice
 
-%p
+%p.image-container{:data => {:photo_id => "#{@photo.id}"}}
   %b Image
   = image_tag @photo.image
 
@@ -21,15 +21,13 @@
   %b Comments:
   %input#new-comment{:placeholder => "?", :type => "text"}
   %input#currentphoto{:type=>"hidden", name: :photo_id, value: "#{@photo.id}"}
-  %ul#comment-list
+  %table#comment-list
+    %tr
+      %th 
+      %th
 
+/ Links commented out as breaking app
 
-/ %p
-/   %b Comments:
-/   %input id="newcomment" placeholder="Type a comment" type="text"
-/   %ul id="todo-list">
-
-
-= link_to 'Edit', edit_photo_path(@photo)
-\|
-= link_to 'Back', photos_path
+/ = link_to 'Edit', edit_photo_path(@photo)
+/ \|
+/ = link_to 'Back', photos_path

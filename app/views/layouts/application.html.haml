@@ -5,6 +5,7 @@
 %html
   %head
     %title Photoapp
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -32,7 +33,10 @@
   %header
     %hr
     %nav
-      %ul
+      %ul.nav
+        %li
+          %a{:href => "/"}
+            %h1 PhotoApp
         %li
           Browse
           %ul
@@ -49,8 +53,8 @@
         %li
           = link_to "New album", new_album_path
         %li
-          %a{:href => "/"}
-            %h1 PhotoApp
+          = link_to "Manage site", users_path
+
         %li
           = search_form_for @q do |f|
             = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search"
@@ -63,12 +67,13 @@
         %li
           - if user_signed_in?
             = current_user.email
-            = link_to "View current profile", "/users/#{current_user.id}"
-            = link_to "Edit profile", edit_user_registration_path
-            = link_to "Logout", destroy_user_session_path, method: :delete
+            %li
+              = link_to "Logout", destroy_user_session_path, method: :delete
           - else
-            = link_to "Sign up", new_user_registration_path
-            = link_to "Login", new_user_session_path
+            %li
+              = link_to "Sign up", new_user_registration_path
+            %li
+              = link_to "Login", new_user_session_path
     %hr
 
   = yield
