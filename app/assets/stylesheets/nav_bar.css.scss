@@ -1,3 +1,4 @@
+//PK this is just some placeholder css for the nav bar. We will need to move/edit it when we come to do the styling in earnest.
 
 header {
   background-color: gray;
@@ -35,13 +36,6 @@ header {
 }
 
 .nav li ul {
-ul li:hover {
-  background: #555;
-  color: #fff;
-  }
-}
-
-ul li ul {
   padding: 0;
   position: absolute;
   top: 48px;
@@ -63,13 +57,6 @@ ul li ul {
 }
 
 .nav li:hover ul {
-  display: block;
-  opacity: 1;
-  visibility: visible;
-}
-
-ul li ul li:hover { background: #666; }
-ul li:hover ul {
   display: block;
   opacity: 1;
   visibility: visible;

@@ -15,12 +15,12 @@
   .field
     = f.label :description
     = f.text_field :description
+  .submit  
+    = f.submit
 
-= form_for @photo do |f|
-  #uploader
-    = f.label :image
-    = f.file_field :image
-  .actions
-    = f.submit 'Save'
+/ = form_for @photos do |f|
+/   #uploader
+/     = f.label :image
+/     = f.file_field :image
 
-= render 'uploader'
+/ AW not sure why not working 
