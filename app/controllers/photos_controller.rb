@@ -47,6 +47,7 @@ class PhotosController < ApplicationController
     @photo = @album.photos.new(params[:photo])
     # json reponses have been set manually in photos/create.json.jbuilder
       if @photo.save  
+        
       else
         render :json => { "errors" => @photo.errors } 
       end

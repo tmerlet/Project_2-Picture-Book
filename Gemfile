@@ -16,7 +16,7 @@ gem 'ransack'
 gem 'rmagick', :require => 'RMagick'
 gem 'kaminari'
 gem "fog", "~> 1.3.1" # required for Amazon Servers => alex
-gem "jquery-fileupload-rails" # multi file upload
+# gem "jquery-fileupload-rails" # multi file upload
 gem 'high_voltage', '~> 2.2.1'
 gem 'jbuilder' # multi file uploader
 
@@ -25,17 +25,20 @@ gem "jquery-ui-rails"
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
 
-  group :development do
+group :development do
     gem 'pry-rails'
     gem 'pry-stack_explorer'
     gem 'binding_of_caller'
     gem 'better_errors'  
     gem 'meta_request'
   end
+  
+group :assets do
+  gem 'sass-rails',   '~> 3.2.3'
+  gem 'coffee-rails', '~> 3.2.1'
+
+  
 
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
