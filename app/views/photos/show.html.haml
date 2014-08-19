@@ -10,7 +10,7 @@
   %td
     %button#like
       - if @ratingpositive.count > 0
-        %i{class: "fa fa-thumbs-up", :data => {:rating_id => "#{@ratingpositive.first.id}"}}
+        %i{class: "fa fa-thumbs-up", :data => {:likerating_id => "#{@ratingpositive.first.id}"}}
       - else
         %i{class: "fa fa-thumbs-o-up"}
   %td
@@ -19,7 +19,7 @@
   %td
     %button#unlike
       - if @ratingnegative.count > 0
-        %i{class: "fa fa-thumbs-down", :data => {:rating_id => "#{@ratingnegative.first.id}"}}
+        %i{class: "fa fa-thumbs-down", :data => {:unlikerating_id => "#{@ratingnegative.first.id}"}}
       - else
         %i{class: "fa fa-thumbs-o-down"}
   %td
