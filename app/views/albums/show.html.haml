@@ -1,25 +1,19 @@
 / %p#notice= notice
 
-%p
-  %b User:
-  = @album.user.name
-%p
-  %b Name:
-  = @album.name
-%p
-  %b Description:
-  = @album.description
-%p
-%b
-  Photos:
+#album_text
+  %ul
+    %li=@album.name    
+    %li=@album.description
 
+#album
   #album_display
     - @photos.each do |photo|
       #album_photos
         = link_to image_tag(photo.image), album_photo_path(@album, photo)
 
-= link_to 'Upload Photos', new_album_photo_path(@album)
-\|
-= link_to 'Edit', edit_album_path(@album)
-\|
-= link_to 'Back', albums_path
+#album_text
+  = link_to 'Upload Photos', new_album_photo_path(@album)
+  \|
+  = link_to 'Edit', edit_album_path(@album)
+  \|
+  = link_to 'Back', albums_path
