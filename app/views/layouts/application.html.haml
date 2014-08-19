@@ -9,6 +9,16 @@
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
+    %script{:type=>"text/javascript"}
+      $(function(){
+      users = #{raw User.all.map{|user| user.name}.to_json};
+      albums = #{raw Album.all.map{|album| album.name}.to_json};
+      window.all = users.concat(albums);
+      $( "#autocomplete" ).autocomplete({
+      source: window.all,
+      })
+      })
+      
 
   %body
     %p.notice= notice
@@ -41,8 +51,10 @@
 
         %li
           = search_form_for @q do |f|
-            = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "album, user, username"
+            = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
             = f.submit
+        %li
+          = link_to "Manage site", users_path
         %li
           - if user_signed_in?
             = current_user.email
