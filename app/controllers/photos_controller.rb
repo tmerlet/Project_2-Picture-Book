@@ -18,8 +18,13 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @comments = Comment.all
-    @ratingpositive = @photo.ratings.where(status: "positive", user_id: current_user.id)
-    @ratingnegative = @photo.ratings.where(status: "negative", user_id: current_user.id)
+    @ratingpositive = []
+    @ratingnegative = [] 
+
+    if @photo.ratings.any? && current_user
+        @ratingpositive =   @photo.ratings.where(status: "positive", user_id: current_user.id)
+        @ratingnegative = @photo.ratings.where(status: "negative", user_id: current_user.id)
+    end 
 
     respond_to do |format|
       format.html # show.html.erb
@@ -30,6 +35,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
+    @album = Album.find(params[:album_id])
     @photo = Photo.new
 
     respond_to do |format|
@@ -46,7 +52,8 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.new(params[:photo])
     
       if @photo.save  
         # binding.pry
