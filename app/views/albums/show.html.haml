@@ -15,10 +15,10 @@
 
   #album_display
     - @photos.each do |photo|
-      - if photo.album_id == @album.id
-        #album_photos
-          = link_to image_tag(photo.image), photo.image.detail.url
-          / = image_tag photo.image
+      / - if photo.album_id == @album.id
+      #album_photos
+        = link_to image_tag(photo.image), photo.image.detail.url
+        / = age_tag photo.image
 
 
 = link_to 'Edit', edit_album_path(@album)

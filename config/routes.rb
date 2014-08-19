@@ -12,16 +12,14 @@ Photoapp::Application.routes.draw do
 
   resources :tags
 
-
-  
-
+  get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
   resources :albums do 
     resources :photos
   end  
 
   
-  root to: "albums#index"
+  # root to: "albums#index"
 
 
   # The priority is based upon order of creation:

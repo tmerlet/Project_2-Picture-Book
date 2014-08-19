@@ -18,6 +18,7 @@ gem 'kaminari'
 gem "fog", "~> 1.3.1" # required for Amazon Servers => alex
 gem "jquery-fileupload-rails" # multi file upload
 gem "paperclip", "~> 2.7"
+gem 'high_voltage', '~> 2.2.1'
 
 gem "jquery-ui-rails"
 
