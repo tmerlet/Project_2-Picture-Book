@@ -1,6 +1,6 @@
 <h1>Add Photos to </h1>
 
-<%= form_for @photo, :remote => true do |f| %>
+<%= form_for [@album, @photo], :remote => true do |f| %>
 
 Choose Your Photo to upload: 
 <input id="fileupload" type="file" name="photo[image]" multiple>
@@ -12,7 +12,7 @@ Choose Your Photo to upload:
     $(function(){
         $('#fileupload').fileupload({
             dataType: 'json',
-            url: '<%= photos_path %>',
+            url: '<%= album_photos_path(@album) %>',
             done: function (e, data) {
                 $.each(data.result, function (index, file) {
                 console.log(file)

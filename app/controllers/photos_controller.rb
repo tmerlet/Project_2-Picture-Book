@@ -30,6 +30,7 @@ class PhotosController < ApplicationController
   # GET /photos/new
   # GET /photos/new.json
   def new
+    @album = Album.find(params[:album_id])
     @photo = Photo.new
 
     respond_to do |format|
@@ -46,7 +47,8 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = Photo.new(params[:photo])
+    @album = Album.find(params[:album_id])
+    @photo = @album.photos.new(params[:photo])
     
       if @photo.save  
         # binding.pry
