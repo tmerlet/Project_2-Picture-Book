@@ -40,7 +40,8 @@ class RatingsController < ApplicationController
   # POST /ratings
   # POST /ratings.json
   def create
-    @rating = Rating.new(params[:rating])
+    # we need to receive the status of the raating , like or dislike
+    @rating = current_user.ratings.new(params[:rating])
 
     respond_to do |format|
       if @rating.save
@@ -72,6 +73,7 @@ class RatingsController < ApplicationController
   # DELETE /ratings/1
   # DELETE /ratings/1.json
   def destroy
+
     @rating = Rating.find(params[:id])
     @rating.destroy
 

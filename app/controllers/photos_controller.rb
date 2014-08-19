@@ -17,6 +17,8 @@ class PhotosController < ApplicationController
   def show
     @photo = Photo.find(params[:id])
     @comments = Comment.all
+    @ratingpositive = @photo.ratings.where(status: "positive", user_id: current_user.id)
+    @ratingnegative = @photo.ratings.where(status: "negative", user_id: current_user.id)
 
     respond_to do |format|
       format.html # show.html.erb
