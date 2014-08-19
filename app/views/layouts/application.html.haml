@@ -12,15 +12,10 @@
     %script{:type=>"text/javascript"}
       $(function(){
       users = #{raw User.all.map{|user| user.name}.to_json};
-      users_username = #{raw User.all.map{|user| user.username}.to_json};
       albums = #{raw Album.all.map{|album| album.name}.to_json};
-      window.all = users.concat(albums).concat(users_username);
-      /console.log(window.all);
+      window.all = users.concat(albums);
       $( "#autocomplete" ).autocomplete({
       source: window.all,
-      / select: function( event, ui ){
-      / autocomplete.autocompleteAjax(ui)
-      / }
       })
       })
       
@@ -61,10 +56,6 @@
         %li
           = link_to "Manage site", users_path
         %li
-          %label{:for => "autocomplete"} search:
-          %input#autocomplete
-
-        %li
           - if user_signed_in?
             = current_user.email
             %li
@@ -75,11 +66,5 @@
             %li
               = link_to "Login", new_user_session_path
     %hr
-
-    / %div#jquery-live-search
-    /   %form{:action => "/search/", :method => "post"}
-    /     %p
-    /       %label enter search terms
-    /       %input{"name-" => "q", :type => "text"}
 
   = yield
