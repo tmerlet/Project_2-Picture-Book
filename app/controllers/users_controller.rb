@@ -7,7 +7,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @albums = Album.all
-
+    @comment = Comment.find(params[:id])
+    @photo = Photo.find(params[:id])
+    
   end
 
 end
