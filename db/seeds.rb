@@ -31,8 +31,8 @@ comment1 = Comment.create(content: "radical man, love your stuff")
 comment2 = Comment.create(content: "groovy dude")
 comment3 = Comment.create(content: "pimping!")
 
-rating1 = Rating.create(status: "negative")
-rating2 = Rating.create(status: "neutral")
+rating1 = Rating.create(status: "positive")
+rating2 = Rating.create(status: "negative")
 rating3 = Rating.create(status: "positive")
 
 photo1.tags << tag1
@@ -60,8 +60,8 @@ photo2.comments << comment1
 photo3.comments << comment2
 
 user1.ratings << rating1
-user2.ratings << rating2
-user3.ratings << rating3
+user1.ratings << rating2
+user1.ratings << rating3
 
 photo1.ratings << rating3
 photo2.ratings << rating1

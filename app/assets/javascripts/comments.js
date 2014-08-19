@@ -5,7 +5,7 @@ function destroyComment(){
   request("DELETE", "/comments/"+commentId, null).success(function(data){
       $this.parent().parent().remove()
     })
-}
+} 
 
 
 function getComments(){
@@ -42,13 +42,7 @@ function appendNewComment(data){
   
   $('<tr><td><img src='+ data.user.profile_image.thumb.url +'></td><td>'+ data.user.name +' says: </br>'+ data.content +'</td>'+
     '<td><button class="destroy" data-id="'+ data.id +'"><i class="fa fa-times"></i></button></td></tr>').prependTo("#comment-list")
-  
-  // REFERENCE CODE TO REFER TO LATER TO INCREASE FUNCTIONALITY
-  // $('<li class="'+ (data.done == true ? "completed" : "") + '">'+
-  //     '<input class="toggle" type="checkbox" data-id="'+ data.id +'" '+ (data.done == true ? 'checked="checked"' : "") + '>'+
-  //     '<label>'+ data.title +'</label>'+
-  //     '<button class="destroy" data-id="'+ data.id +'"></button>'+
-  //   '</li>').prependTo("#todo-list")
+
 }
 
 
