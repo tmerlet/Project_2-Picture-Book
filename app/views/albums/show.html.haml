@@ -15,10 +15,8 @@
 
   #album_display
     - @photos.each do |photo|
-      / - if photo.album_id == @album.id
       #album_photos
-        = link_to image_tag(photo.image), photo.image.detail.url
-        / = age_tag photo.image
+        = link_to image_tag(photo.image), album_photo_path(@album, photo)
 
 = link_to 'Upload Photos', new_album_photo_path(@album)
 \|
