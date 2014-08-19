@@ -12,12 +12,7 @@ function request(method, url, data){
 function unlikeRating(){
   $this = $(this)
   $numberOfUnlikes = parseInt($('#number_of_unlikes').text())
-  
-  // if ($this.children("i").hasClass("fa-thumbs-up")){
-  //   removeLikeRating();
-  //   alert("getting to here")
-  //   $this.children("i").toggleClass("fa-thumbs-o-up").toggleClass("fa-thumbs-up")
-  // }
+
 
   if ($this.children("i").hasClass("fa-thumbs-o-down")){
     addUnlikeRating();
@@ -51,12 +46,7 @@ function removeUnlikeRating(){
 function likeRating(){
   $this = $(this)
   $numberOfLikes = parseInt($('#number_of_likes').text())
-  
 
-  // if ($this.children("i").hasClass("fa-thumbs-up")){
-  //   removeUnlikeRating();
-  //   $this.children("i").toggleClass("fa-thumbs-o-up").toggleClass("fa-thumbs-up")
-  // }
 
   if ($this.children("i").hasClass("fa-thumbs-o-up")){
     addLikeRating();
