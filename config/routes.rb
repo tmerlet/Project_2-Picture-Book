@@ -14,9 +14,10 @@ Photoapp::Application.routes.draw do
 
   get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
-  resources :albums do 
-    resources :photos
-  end  
+  resources :albums  
+  
+  resources :photos
+
 
   
   # root to: "albums#index"

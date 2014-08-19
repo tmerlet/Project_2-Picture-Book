@@ -11,10 +11,10 @@
 
   - @albums.each do |album|
     %tr
-      %td= album.user_id
+      %td= album.user.name
       %td= album.name
       %td= album.description
-      %td= link_to 'Upload Photos', new_album_photo_path(album)
+      %td= link_to 'Upload Photos', new_photo_path
       %td= link_to 'Show', album
       %td= link_to 'Edit', edit_album_path(album)
       %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }

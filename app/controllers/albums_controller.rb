@@ -3,7 +3,7 @@ class AlbumsController < ApplicationController
   # GET /albums.json
   def index
     # PK: Check out the application controller for the method for this.
-
+    @user = User.all
 
     respond_to do |format|
       format.html # index.html.erb

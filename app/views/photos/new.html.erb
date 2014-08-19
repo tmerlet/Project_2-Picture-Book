@@ -1,6 +1,6 @@
-<h1>Add Photos to <%= @album.name %></h1>
+<h1>Add Photos to </h1>
 
-<%= form_for [@album, @photo], :remote => true do |f| %>
+<%= form_for @photo, :remote => true do |f| %>
 
 Choose Your Photo to upload: 
 <input id="fileupload" type="file" name="photo[image]" multiple>
@@ -12,8 +12,7 @@ Choose Your Photo to upload:
     $(function(){
         $('#fileupload').fileupload({
             dataType: 'json',
-            url: '<%= album_photos_path(@album.id) %>',
-            // change so to avoidd nested routes
+            url: '<%= photos_path %>',
             done: function (e, data) {
                 $.each(data.result, function (index, file) {
                 console.log(file)
@@ -28,7 +27,7 @@ Choose Your Photo to upload:
 </br>
 
 <%= link_to 'Back', albums_path %> |
-<%= link_to "View #{@album.name} Album", album_photos_path(@album) %>
+<%= link_to "View  Album" %>
 </br>
   
 <ul id="thumbs" class="cf">

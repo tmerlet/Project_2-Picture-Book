@@ -44,10 +44,10 @@ class PhotosController < ApplicationController
   # POST /photos
   # POST /photos.json
   def create
-    @photo = @album.photos.new(params[:photo])
-    # json reponses have been set manually in photos/create.json.jbuilder
+    @photo = Photo.new(params[:photo])
+    
       if @photo.save  
-        
+        # binding.pry
       else
         render :json => { "errors" => @photo.errors } 
       end
@@ -85,5 +85,5 @@ end
 private
 
 def the_album
-  @album = Album.find(params["album_id"])
+  # @album = Album.find(params["album_id"])
 end
