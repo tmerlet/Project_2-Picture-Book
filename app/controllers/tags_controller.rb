@@ -16,6 +16,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
     @tags = Tag.all
     @photo = Photo.all
+    @album = Album.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb

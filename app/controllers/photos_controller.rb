@@ -20,8 +20,8 @@ class PhotosController < ApplicationController
     @comments = Comment.all
     @ratingpositive = []
     @ratingnegative = [] 
-    
-    if @photo.ratings.any?
+
+    if @photo.ratings.any? && current_user
         @ratingpositive =   @photo.ratings.where(status: "positive", user_id: current_user.id)
         @ratingnegative = @photo.ratings.where(status: "negative", user_id: current_user.id)
     end 
