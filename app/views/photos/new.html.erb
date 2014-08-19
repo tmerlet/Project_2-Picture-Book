@@ -13,6 +13,7 @@ Upload Photos:
         $('#fileupload').fileupload({
             dataType: 'json',
             url: '<%= album_photos_path(@album.id) %>',
+            // change so to avoidd nested routes
             done: function (e, data) {
                 $.each(data.result, function (index, file) { 
                    $('<li><img src="'+file.thumbnail_url+'"></li>').appendTo('#thumbs');
