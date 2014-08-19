@@ -45,20 +45,11 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = @album.photos.new(params[:photo])
-    # binding.pry
-    # respond_to do |format|
-      if @photo.save
-        # format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        # format.json { render json: @photo }
-
-        # format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        # format.json { render json: @photo, status: :created, location: @photo }
+    # json reponses have been set manually in photos/create.json.jbuilder
+      if @photo.save  
       else
         render :json => { "errors" => @photo.errors } 
-        # format.html { render action: "new" }
-        # format.json { render json: @photo.errors, status: :unprocessable_entity }
       end
-    # end
   end
 
   # PUT /photos/1

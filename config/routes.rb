@@ -12,10 +12,6 @@ Photoapp::Application.routes.draw do
 
   resources :tags
 
-
-  
-
-
   resources :albums do 
     resources :photos
   end  
