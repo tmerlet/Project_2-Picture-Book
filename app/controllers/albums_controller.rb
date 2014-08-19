@@ -28,7 +28,7 @@ class AlbumsController < ApplicationController
   # GET /albums/new.json
   def new
     @album = Album.new
-    @photo = Photo.new
+    @photos = Photo.new
 
     respond_to do |format|
       format.html # new.html.erb
