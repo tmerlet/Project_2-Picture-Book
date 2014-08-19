@@ -2,6 +2,7 @@ class PhotosController < ApplicationController
   # GET /photos
   # GET /photos.json
   before_filter :the_album
+  respond_to :json
   
   def index
     @photos = Photo.all
@@ -28,7 +29,6 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
-    # @album = Album.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -45,16 +45,11 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = @album.photos.new(params[:photo])
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render json: @photo, status: :created, location: @photo }
+    # json reponses have been set manually in photos/create.json.jbuilder
+      if @photo.save  
       else
-        format.html { render action: "new" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
+        render :json => { "errors" => @photo.errors } 
       end
-    end
   end
 
   # PUT /photos/1
