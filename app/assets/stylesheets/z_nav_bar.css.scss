@@ -39,6 +39,7 @@ ul li:hover {
   background: #555;
   color: #fff;
 }
+}
 
 ul li ul {
   padding: 0;
@@ -66,6 +67,7 @@ ul li ul {
   opacity: 1;
   visibility: visible;
 }
+
 ul li ul li:hover { background: #666; }
 ul li:hover ul {
   display: block;
