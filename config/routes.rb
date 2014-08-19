@@ -12,7 +12,10 @@ Photoapp::Application.routes.draw do
 
   resources :tags
 
-  get 'pages/home' => 'high_voltage/pages#show', id: 'home'
+  root :to => 'index#show'
+
+
+  # get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
   resources :albums do 
     resources :photos

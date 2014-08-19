@@ -25,7 +25,6 @@
     %p.alert= alert
    
   %header
-    %hr
     %nav
       %ul.nav
         %li
@@ -49,7 +48,7 @@
         %li
           = link_to "Manage site", users_path
 
-        %li
+        %li.search
           = search_form_for @q do |f|
             = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
             = f.submit
@@ -65,6 +64,5 @@
               = link_to "Sign up", new_user_registration_path
             %li
               = link_to "Login", new_user_session_path
-    %hr
 
   = yield
