@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   def index
     # PK: Check out the application controller for the method for this.
     @user = User.all
-
+    @album = Album.find(params[:id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @albums }
@@ -15,7 +15,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1.json
   def show
     @album = Album.find(params[:id])
-    @photos = Photo.all
+    @photos = @album.photos
 
 
     respond_to do |format|
