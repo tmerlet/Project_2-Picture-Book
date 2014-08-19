@@ -11,3 +11,7 @@
 //   event.preventDefault();
 
 // }
+
+// jQuery('#jquery-live-searchinput[name="q"]').liveSearch({url: Router.urlForModule('SearchResults') + '&q='});
+
+

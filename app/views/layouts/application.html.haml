@@ -12,10 +12,9 @@
     %script{:type=>"text/javascript"}
       $(function(){
       users = #{raw User.all.map{|user| user.name}.to_json};
+      users_username = #{raw User.all.map{|user| user.username}.to_json};
       albums = #{raw Album.all.map{|album| album.name}.to_json};
-      tags = #{raw Tag.all.map{|tag| tag.name}.to_json};
-      photos = #{raw Photo.all.map{|photo| photo.location}.to_json};
-      window.all = users.concat(tags).concat(albums).concat(photos);
+      window.all = users.concat(albums).concat(users_username);
       /console.log(window.all);
       $( "#autocomplete" ).autocomplete({
       source: window.all,
@@ -57,13 +56,14 @@
 
         %li
           = search_form_for @q do |f|
-            = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search"
+            = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
             = f.submit
         %li
           = link_to "Manage site", users_path
         %li
           %label{:for => "autocomplete"} search:
-          %input#autocomplete/
+          %input#autocomplete
+
         %li
           - if user_signed_in?
             = current_user.email
@@ -75,5 +75,11 @@
             %li
               = link_to "Login", new_user_session_path
     %hr
+
+    / %div#jquery-live-search
+    /   %form{:action => "/search/", :method => "post"}
+    /     %p
+    /       %label enter search terms
+    /       %input{"name-" => "q", :type => "text"}
 
   = yield
