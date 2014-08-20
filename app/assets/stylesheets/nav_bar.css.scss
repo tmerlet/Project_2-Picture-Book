@@ -1,16 +1,21 @@
+@mixin marker_pen {
+  font-family: 'Permanent Marker', cursive;
+}
 
 header {
+  @include marker_pen;
   position: fixed;
   top: 0px; 
   width: 100%;
   text-align: center; 
-  background: grey;
+  background: #A3ADB8;
   max-height: 100px;
 }
 
 nav {
   display: fixed;
   max-height: 100px;
+
 }
 
 .nav {
