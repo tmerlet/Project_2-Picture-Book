@@ -19,7 +19,7 @@ album2 = Album.create(name: "My favourit holiday", description: "A weekend in pa
 
 album3 = Album.create(name: "Goofing around", description: "A night out to remember")
 
-photo1 = Photo.create(description: "description 1", location: "location 1 ", image: "mountain01.jpg")
+photo1 = Photo.create(description: "description 1", location: "TN2 4DE", image: "mountain01.jpg")
 photo2 = Photo.create(description: "description 2", location: "location 2 ", image: "mountain02.jpg")
 photo3 = Photo.create(description: "description 3", location: "location 3 ", image: "mountain03.jpg")
 
