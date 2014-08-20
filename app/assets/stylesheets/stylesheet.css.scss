@@ -1,4 +1,8 @@
-/*colour for background on album_show_page */ $album_background: #202020 ;  
+$album_background: #202020 ;   
+@mixin marker_pen {
+  font-family: 'Permanent Marker', cursive;
+}
+
 
 body {
   background: url('wood_background.jpg') fixed;
@@ -10,6 +14,7 @@ body {
   width: 100%;
   margin: auto;
   text-align: center;
+  padding-bottom: 20px;
   img {
     display: inline-block;
     width: 25%;
@@ -96,3 +101,14 @@ body {
   font-color: black;
 }
 
+/*
+
+ gerry's tests 
+.instant-bg::before{
+  content: "test";  content: url(///dfh/fd/g/d)
+  width: 40px;
+  height:20px;
+  background-color: red;
+  position: absolute;
+
+}*/
