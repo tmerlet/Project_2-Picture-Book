@@ -1,4 +1,4 @@
-$album_background: #202020 ;   
+
 @mixin marker_pen {
   font-family: 'Permanent Marker', cursive;
 }
@@ -6,27 +6,58 @@ $album_background: #202020 ;
 
 body {
   background: url('wood_background.jpg') fixed;
-  margin: auto;
+  margin-top: 70px;
   max-width: 1400px;
 }
 
+.header_div {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 100px;
+  border: 20px white solid;
+  background: white;
+  opacity: 0.6;
+  text-align: center;
+}
+
+#show_image {
+  margin-top: 100px;
+  img {
+    width: 75%;
+    height: auto;
+    border: #FFFFF1 solid;
+    border-width: 50px 50px 250px 50px;
+    border-radius: 10px;
+  }
+}
+
 #random_image {
+  margin-top: 500px;
   width: 100%;
   margin: auto;
   text-align: center;
   padding-bottom: 20px;
-  img {
+  .image_info {
     display: inline-block;
     width: 25%;
     height: auto;
-    border: #FFFFF1 solid;
-    border-width: 10px 10px 150px 10px;
-    border-radius: 10px;
+    background-color: #FFFFF1;
+    vertical-align: bottom;
+    margin: 10px;
+    padding: 3% 3% 2% 3%;
+    @include marker_pen;
+    font-size: 12px;
+    text-align: left;
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      }
     }
 }
 
-
 #album_text {
+  margin-top: 50px;
     li {
       padding:  10px;
       list-style: none;
@@ -37,40 +68,9 @@ body {
     }
 }
 
-#album {
-  max-width: 1400px;
-  width: 100%;
-  margin: 10px;
-  border-radius: 20px;
-  padding: 50px;
-  background: $album_background;
-   img {
-       width: 200px;
-      height: auto;
-    }
-}
-
-#album_display {
-  width: 100%;
-  padding: 50px;
-  width: 900px;
-  margin: auto;
-  background: lighten($album_background, 10% );
-  border-radius: 30px;
-  text-align: center;
-}
-
-#album_photos {
-  width: 200px;
-  height: auto;
-  display: inline-block;
-  margin: auto;
- 
-}
-
+/*LANDING PAGE FOR LOGIN OR REGISTER*/
 .home_page {
   background: url('home.jpg') fixed;
-  /*background: url('home.png'); */
   background-size: cover;
   background-repeat: no-repeat;
   left: 0;

@@ -5,11 +5,12 @@
     %li=@album.name    
     %li=@album.description
 
-#album
-  #album_display
-    - @photos.each do |photo|
-      #album_photos
-        = link_to image_tag(photo.image), album_photo_path(@album, photo)
+#random_image
+  - @photos.each do |photo|
+    .image_info
+      = link_to (image_tag photo.image), album_photo_path(@album, photo)
+      %p= photo.location
+      %p= photo.description
 
 #album_text
   = link_to 'Upload Photos', new_album_photo_path(@album)
