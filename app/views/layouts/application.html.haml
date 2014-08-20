@@ -22,6 +22,8 @@
 
   %body 
     %header
+      = social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
+      %hr
       %nav
         %ul.nav
           %li
@@ -60,4 +62,5 @@
                 = link_to "Login", new_user_session_path
     %p.notice= notice
     %p.alert= alert
+
     = yield

@@ -1,5 +1,7 @@
 Photoapp::Application.routes.draw do
   
+  get "homes/show"
+
   devise_for :users # additional route to create the user show page -TM
   resources :users, :only => [:show, :index]
 
@@ -20,8 +22,9 @@ Photoapp::Application.routes.draw do
   # get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
   resources :albums do 
-    resources :photos
-  end  
+    resources :photos 
+  end
+
 
   
   # root to: "albums#index"
@@ -83,4 +86,5 @@ Photoapp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id))(.:format)'
+
 end

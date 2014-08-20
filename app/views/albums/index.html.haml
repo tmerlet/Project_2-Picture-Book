@@ -11,7 +11,7 @@
 
   - @albums.each do |album|
     %tr
-      %td= album.user_id
+      %td= album.user.name
       %td= album.name
       %td= album.description
       %td= link_to 'Upload Photos', new_album_photo_path(album)
