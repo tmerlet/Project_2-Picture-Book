@@ -1,2 +1,7 @@
-/ = render layout: false
-/ trying to not render the layout/application.html
+%h1 APP
+
+#random_image
+  - @photos.each do |photo|
+    = image_tag photo.image
+    / = photo.location
+    / = photo.description

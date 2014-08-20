@@ -1,9 +1,23 @@
 /*colour for background on album_show_page */ $album_background: #202020 ;  
 
 body {
-  /*margin-bottom: 30px;*/
+  background: url('wood_background.jpg') fixed;
   margin: auto;
   max-width: 1400px;
+}
+
+#random_image {
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  img {
+    display: inline-block;
+    width: 25%;
+    height: auto;
+    border: #FFFFF1 solid;
+    border-width: 10px 10px 150px 10px;
+    border-radius: 10px;
+    }
 }
 
 
