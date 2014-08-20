@@ -27,7 +27,7 @@
     %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1zg7XkoaEyge8Py3jbn9fgTZvq5_QIU", :type => "text/javascript"}
     :javascript
       var map;
-      var myLatlng = new google.maps.LatLng(#{@photo.latitude}, #{@photo.longitude});
+      var myLatlng = new google.maps.LatLng(#{@photo.any?.latitude.any? && current_user}, {@photo.longitude.any? && current_user});
 
       function initialize() {
         var mapOptions = {
