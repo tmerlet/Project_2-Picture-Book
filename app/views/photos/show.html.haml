@@ -32,7 +32,11 @@
 %p
   %b Location:
   = @photo.location
-%P 
+  %b Longitude:
+  = @photo.longitude
+  %b Latitude
+  = @photo.latitude
+%p 
   %b Tags:
   - @photo.tags.each do |tp|
     = link_to tp.name, tp

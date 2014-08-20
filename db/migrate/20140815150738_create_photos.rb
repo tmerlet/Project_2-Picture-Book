@@ -5,6 +5,8 @@ class CreatePhotos < ActiveRecord::Migration
       t.string :location
       t.text :image
       t.integer :album_id
+      t.float :latitude
+      t.float :longitude
       t.timestamps
     end
   end

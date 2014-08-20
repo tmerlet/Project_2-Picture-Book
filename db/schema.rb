@@ -34,6 +34,8 @@ ActiveRecord::Schema.define(:version => 20140815153953) do
     t.string   "location"
     t.text     "image"
     t.integer  "album_id"
+    t.float    "latitude"
+    t.float    "longitude"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

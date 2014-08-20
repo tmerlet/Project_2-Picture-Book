@@ -20,6 +20,7 @@ gem "fog", "~> 1.3.1" # required for Amazon Servers => alex
 gem 'high_voltage', '~> 2.2.1'
 gem 'jbuilder' # multi file uploader
 gem 'social-share-button', '~> 0.1.6'
+gem 'geocoder'
 
 
 gem "jquery-ui-rails"

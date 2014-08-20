@@ -7,5 +7,7 @@ class Photo < ActiveRecord::Base
 
   attr_accessible :description, :location, :image
   mount_uploader :image, AlbumPhotoUploader
+  geocoded_by :location
+  after_validation :geocode, if => :location_changed?
 
 end
