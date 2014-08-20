@@ -91,7 +91,7 @@ class PhotosController < ApplicationController
   end
 
   private
-
+  
     def the_album
       @album = Album.find(params["album_id"])
     end
