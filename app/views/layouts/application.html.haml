@@ -22,14 +22,19 @@
       })
       })
     / ###################### code for google maps ################################
+
+    %meta{:content => "initial-scale=1.0, user-scalable=no", :name => "viewport"}/
+    :css
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+
     %meta{:content => "initial-scale=1.0, user-scalable=no", :name => "viewport"}/
     :css
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
     
-    / Comment
-
   %body 
     %header
       %nav
@@ -74,4 +79,19 @@
 
     = yield
 
+    %footer
+      %p.footer 
+        |
+      %p.footer
+        =link_to 'about', page_path('about')
+      %p.footer 
+        |
+      %p.footer
+        =link_to 'terms & conditions', page_path('terms')
+      %p.footer 
+        |
+      %p.footer
+        Copyright 2014, Alex Piers & Toby
+      %p.footer 
+        |
 
