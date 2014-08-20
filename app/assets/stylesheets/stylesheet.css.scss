@@ -4,6 +4,7 @@ body {
   background: url('wood_background.jpg') fixed;
   margin: auto;
   max-width: 1400px;
+  margin-bottom: 50px;
 }
 
 #random_image {
@@ -94,5 +95,28 @@ body {
 .home_box a{
   text-decoration: none;
   font-color: black;
+}
+
+footer {
+  border-top: 3px solid black;
+  background-color: gray;
+  text-align: center;
+  height: 50px;
+  position:fixed;
+  bottom:0px;
+  left:0px;
+  right:0px;
+  margin-bottom:0px;
+}
+
+.footer {
+  display: inline-block;
+  margin-right: 10px;
+  color: white;
+}
+
+.footer a {
+  text-decoration: none;
+  color: white;
 }
 
