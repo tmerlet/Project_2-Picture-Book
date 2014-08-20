@@ -26,6 +26,7 @@ gem "jquery-ui-rails"
 # in production environments by default.
 
 group :development do
+    gem 'letter_opener'
     gem 'pry-rails'
     gem 'pry-stack_explorer'
     gem 'binding_of_caller'
