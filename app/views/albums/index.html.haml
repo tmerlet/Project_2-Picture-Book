@@ -11,7 +11,7 @@
 
   - @albums.each do |album|
     %tr
-      %td= album.user.name
+      / %td= album.user.name
       / would be good to link this to the user_show page
       %td= link_to album.name, album
       %td= album.description
