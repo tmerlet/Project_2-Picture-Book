@@ -108,26 +108,27 @@ a:visited {
 }
 
 footer {
-  border-top: 3px solid black;
+  padding-bottom: 5px;
   background-color: gray;
   text-align: center;
   height: 50px;
   /*position: relative;*/
-  position: fixed;
+  /*position: fixed;*/
   bottom: 0px;
   width: 100%;
+  clear: both;
+  @include marker_pen
 }
 
 .footer {
   display: inline-block;
   margin-right: 10px;
   color: white;
-}
-
-.footer a {
-  text-decoration: none;
-  color: white;
-}
+    a {
+      text-decoration: none;
+      color: white;
+    }
+} 
 
 #showing_image {
   margin-top: 500px;
