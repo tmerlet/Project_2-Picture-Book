@@ -1,0 +1,9 @@
+%h1 Welcome to Our App
+
+%body.home_page
+  %p.home_box
+    = link_to 'Log In', new_user_session_path
+  %p.home_box
+    = link_to "Register",new_user_registration_path
+  %p.home_box
+    = link_to "Skip (dev only)",users_path

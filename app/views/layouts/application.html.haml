@@ -20,52 +20,48 @@
       })
       
 
-  %body
+  %body 
+    %header
+      %nav
+        %ul.nav
+          %li
+            %a{:href => "/index"}
+              %h1 PhotoApp
+          %li
+            Browse
+            %ul
+              %li
+                %a{:href => "users"} Users
+              %li
+                %a{:href => "albums"} Albums
+              %li
+                %a{:href => "photos"} Photos
+              %li
+                %a{:href => "tags"} Tags
+          %li
+            = link_to "My profile", users_path
+          %li
+            = link_to "New album", new_album_path
+          %li.search
+            = search_form_for @q do |f|
+              = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
+              = f.submit
+          %li
+            = link_to "Manage site", users_path
+          %li
+            - if user_signed_in?
+              = current_user.email
+              %li
+                = link_to "Logout", destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to "Sign up", new_user_registration_path
+              %li
+                = link_to "Login", new_user_session_path
+    %p
+      = social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
+    %hr
     %p.notice= notice
     %p.alert= alert
-   
-  %header
-    = social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
-    %hr
-    %nav
-      %ul.nav
-        %li
-          %a{:href => "/"}
-            %h1 PhotoApp
-        %li
-          Browse
-          %ul
-            %li
-              %a{:href => "users"} Users
-            %li
-              %a{:href => "albums"} Albums
-            %li
-              %a{:href => "photos"} Photos
-            %li
-              %a{:href => "tags"} Tags
-        %li
-          = link_to "My profile", users_path
-        %li
-          = link_to "New album", new_album_path
-        %li
-          = link_to "Manage site", users_path
 
-        %li
-          = search_form_for @q do |f|
-            = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
-            = f.submit
-        %li
-          = link_to "Manage site", users_path
-        %li
-          - if user_signed_in?
-            = current_user.email
-            %li
-              = link_to "Logout", destroy_user_session_path, method: :delete
-          - else
-            %li
-              = link_to "Sign up", new_user_registration_path
-            %li
-              = link_to "Login", new_user_session_path
-    %hr
-
-  = yield
+    = yield
