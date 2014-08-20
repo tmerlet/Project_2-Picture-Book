@@ -1,31 +1,46 @@
+:javascript
+  window.photo = #{@photo.to_json}
 %p#notice= notice
 
 %p.image-container{:data => {:photo_id => "#{@photo.id}"}}
   %b Image
-  = image_tag @photo.image
+  #show_image
+    #actual_image
+      = image_tag @photo.image
+    %p 
+      %b ratings:
+      %b
+      %td
+        %button#like
+          - if @ratingpositive.count > 0
+            %i{class: "fa fa-thumbs-up", :data => {:likerating_id => "#{@ratingpositive.first.id}"}}
+          - else
+            %i{class: "fa fa-thumbs-o-up"}
+      %td
+        %label#number_of_likes
+          = @photo.ratings.where(status: "positive").count
+      %td
+        %button#unlike
+          - if @ratingnegative.count > 0
+            %i{class: "fa fa-thumbs-down", :data => {:unlikerating_id => "#{@ratingnegative.first.id}"}}
+          - else
+            %i{class: "fa fa-thumbs-o-down"}
+      %td
+        %label#number_of_unlikes
+          = @photo.ratings.where(status: "negative").count
 
-%p 
-  %b ratings:
-  %b
-  %td
-    %button#like
-      - if @ratingpositive.count > 0
-        %i{class: "fa fa-thumbs-up", :data => {:likerating_id => "#{@ratingpositive.first.id}"}}
-      - else
-        %i{class: "fa fa-thumbs-o-up"}
-  %td
-    %label#number_of_likes
-      = @photo.ratings.where(status: "positive").count
-  %td
-    %button#unlike
-      - if @ratingnegative.count > 0
-        %i{class: "fa fa-thumbs-down", :data => {:unlikerating_id => "#{@ratingnegative.first.id}"}}
-      - else
-        %i{class: "fa fa-thumbs-o-down"}
-  %td
-    %label#number_of_unlikes
-      = @photo.ratings.where(status: "negative").count
+    %p
+      %b Description:
+      = @photo.description
+    %p
+      %b Location:
+      = @photo.location
+    %P 
+      %b Tags:
+      - @photo.tags.each do |tp|
+        = link_to tp.name, tp
 
+<<<<<<< HEAD
 %p
   %b Description:
   = @photo.description
@@ -51,3 +66,9 @@
       %th
 
 #map-canvas{:style => "width: 30%; height: 30%"}
+
+
+= link_to "Edit", edit_album_photo_path(@album,@photo)
+= link_to "Delete", album_photo_path(@album,@photo), method: :delete
+/ Photo will get deleted, but the comments will still remain in the database
+= link_to "Back", album_photo_path(@album, @photo)

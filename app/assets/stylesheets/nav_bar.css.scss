@@ -1,10 +1,13 @@
+@mixin main_font {
+  font-family: 'Permanent Marker', cursive;
+}
 
 header {
   position: fixed;
   top: 0px; 
   width: 100%;
   text-align: center; 
-  background: grey;
+  background: #A3ADB8;
   max-height: 100px;
 }
 
@@ -17,7 +20,6 @@ nav {
   text-align: left;
   display: inline;
   margin: 0;
-  /*padding: 15px 4px 17px 0;*/
   list-style: none;
 }
 
@@ -32,6 +34,10 @@ nav {
   font-family: arial;
   color: white;
   max-height: 45px;
+}
+
+nav a, li:nth-child(2), li:nth-child(7) {
+  @include main_font;
 }
 
 .nav li:hover {
