@@ -82,8 +82,5 @@ Photoapp::Application.configure do
     :user_name => ENV["MANDRILL_USERNAME"],
     :password  => ENV["MANDRILL_API_KEY"]
   }
-<<<<<<< HEAD
->>>>>>> Stashed changes
-=======
->>>>>>> 444e7a06e3d677f81ec308ce2690ef9bb204a36e
+
 end
