@@ -66,10 +66,9 @@ Photoapp::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-<<<<<<< Updated upstream
-=======
 
   config.action_mailer.default_url_options = { :host => 'http://wdi-7-photo-app.herokuapp.com/' }
+
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -83,5 +82,8 @@ Photoapp::Application.configure do
     :user_name => ENV["MANDRILL_USERNAME"],
     :password  => ENV["MANDRILL_API_KEY"]
   }
+<<<<<<< HEAD
 >>>>>>> Stashed changes
+=======
+>>>>>>> 444e7a06e3d677f81ec308ce2690ef9bb204a36e
 end
