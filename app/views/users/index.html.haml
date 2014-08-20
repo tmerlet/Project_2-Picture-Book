@@ -12,5 +12,5 @@
       %td= user.username
       %td= image_tag(user.profile_image.thumb.url)
 
-= paginate @users
+= paginate @users, theme: 'twitter-bootstrap'
 %br

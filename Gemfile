@@ -16,10 +16,9 @@ gem 'ransack'
 gem 'rmagick', :require => 'RMagick'
 gem 'kaminari'
 gem "fog", "~> 1.3.1" # required for Amazon Servers => alex
-# gem "jquery-fileupload-rails" # multi file upload
 gem 'high_voltage', '~> 2.2.1'
 gem 'jbuilder' # multi file uploader
-
+gem 'bootstrap-kaminari-views'
 
 gem "jquery-ui-rails"
 
