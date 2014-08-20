@@ -9,4 +9,12 @@ class ApplicationController < ActionController::Base
     @albums = @q.result(distinct: true).order(:created_at).page(params[:page])
   end
 
+  def after_sign_in_path_for(resource)
+      request.env['omniauth.origin'] || stored_location_for(resource) || '/index'
+  end
+
+  def after_sign_up_path_for(resource)
+    request.env['omniauth.origin'] || stored_location_for(resource) || '/index'
+  end
+
 end
