@@ -3,7 +3,9 @@ Photoapp::Application.routes.draw do
   get "homes/show"
 
   devise_for :users # additional route to create the user show page -TM
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    get 'page/:page', action: :index, on: :collection
+  end
 
 
   resources :ratings
