@@ -1,4 +1,8 @@
+%img{:src => "https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-camera-128.png"}
+%br
 %p
   Welcome #{@email}!
 %p You can confirm your account email through the link below:
 %p= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token)
+
+
