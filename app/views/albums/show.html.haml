@@ -9,7 +9,6 @@
   - @photos.each do |photo|
     .image_info
       = link_to (image_tag photo.image), album_photo_path(@album, photo)
-      / showing all photos, not just that one
       %p= photo.location
       %p= photo.description
 

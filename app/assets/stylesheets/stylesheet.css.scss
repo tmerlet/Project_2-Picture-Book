@@ -11,10 +11,13 @@ body {
 }
 
 .header_div {
-  margin-top: 30px;
+  overflow: hidden;
+  width: 100%;
   margin-bottom: 30px;
   height: 100px;
-  border: 20px black solid;
+  border: 20px white solid;
+  background: white;
+  opacity: 0.6;
   text-align: center;
 }
 
@@ -30,6 +33,7 @@ body {
 }
 
 #random_image {
+  margin-top: 500px;
   width: 100%;
   margin: auto;
   text-align: center;
