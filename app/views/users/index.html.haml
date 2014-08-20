@@ -12,5 +12,6 @@
       %td= user.username
       %td= image_tag(user.profile_image.thumb.url)
 
-= paginate @users, theme: 'twitter-bootstrap'
+/ already has a default class of 'pagination' AW
+= paginate @users
 %br
