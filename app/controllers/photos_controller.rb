@@ -56,7 +56,7 @@ class PhotosController < ApplicationController
     @photo = @album.photos.new(params[:photo])
     
       if @photo.save  
-        # binding.pry
+        
       else
         render :json => { "errors" => @photo.errors } 
       end
