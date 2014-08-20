@@ -8,6 +8,7 @@
     %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
+    = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1zg7XkoaEyge8Py3jbn9fgTZvq5_QIU"
     = csrf_meta_tags
     %script{:type=>"text/javascript"}
       $(function(){
@@ -24,27 +25,7 @@
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
-    %script{:src => "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1zg7XkoaEyge8Py3jbn9fgTZvq5_QIU", :type => "text/javascript"}
-    :javascript
-      var map;
-      var myLatlng = new google.maps.LatLng(#{@photo.any?.latitude.any? && current_user}, {@photo.longitude.any? && current_user});
-
-      function initialize() {
-        var mapOptions = {
-          center: myLatlng,
-          zoom: 10
-        };
-        map = new google.maps.Map(document.getElementById("map-canvas"),
-            mapOptions);
-        
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title:"Hello World!"
-        });
-      }
-  
-      google.maps.event.addDomListener(window, 'load', initialize);
+    
 
   %body 
     %header
