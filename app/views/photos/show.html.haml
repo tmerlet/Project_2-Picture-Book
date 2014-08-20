@@ -1,3 +1,5 @@
+:javascript
+  window.photo = #{@photo.to_json}
 %p#notice= notice
 
 %p.image-container{:data => {:photo_id => "#{@photo.id}"}}

@@ -56,7 +56,7 @@ class PhotosController < ApplicationController
     @photo = @album.photos.new(params[:photo])
     
       if @photo.save  
-        
+
       else
         render :json => { "errors" => @photo.errors } 
       end
@@ -89,10 +89,10 @@ class PhotosController < ApplicationController
       format.json { head :no_content }
     end
   end
-end
 
-private
+  private
 
-def the_album
-  # @album = Album.find(params["album_id"])
+    def the_album
+      @album = Album.find(params["album_id"])
+    end
 end
