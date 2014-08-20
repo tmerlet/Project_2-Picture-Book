@@ -3,7 +3,9 @@ Photoapp::Application.routes.draw do
   get "homes/show"
 
   devise_for :users # additional route to create the user show page -TM
-  resources :users, :only => [:show, :index]
+  resources :users, :only => [:show, :index] do
+    get 'page/:page', action: :index, on: :collection
+  end
 
 
   resources :ratings
@@ -14,7 +16,12 @@ Photoapp::Application.routes.draw do
 
   resources :tags
 
-  get 'pages/home' => 'high_voltage/pages#show', id: 'home'
+  resources :index #PK need to amend this as only need index and show route (and the show route is already displayed below as the root page)
+
+  root :to => 'index#show'
+
+
+  # get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
   resources :albums do 
     resources :photos 

@@ -12,4 +12,6 @@
       %td= user.username
       %td= image_tag(user.profile_image.thumb.url)
 
+/ already has a default class of 'pagination' AW
+= paginate @users
 %br

@@ -1,0 +1,51 @@
+.signup_page {
+  background: url('signup.jpg') fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.signin_page {
+  background: url('signin.png') fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  text-align: left;
+  margin-left: 100px;
+}
+
+.signup_form {
+  border: black solid 10px;
+  background: white;
+  opacity: 0.6;
+  border-radius: 10px;
+  font-color: red;
+  width: 300px;
+  padding: 10px 10px 20px 50px;
+  display: inline-block;
+  margin: auto;
+  text-decoration: none;
+  font-color: black;
+  margin-top: 20px;
+}
+
+.signin_form {
+  border: black solid 10px;
+  background: white;
+  opacity: 0.6;
+  border-radius: 10px;
+  font-color: red;
+  width: 300px;
+  padding: 10px 10px 20px 50px;
+  display: inline-block;
+  margin: auto;
+  text-decoration: none;
+  font-color: black;
+  margin-top: 100px;
+}
