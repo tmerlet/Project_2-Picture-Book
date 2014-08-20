@@ -20,7 +20,6 @@ nav {
   text-align: left;
   display: inline;
   margin: 0;
-  /*padding: 15px 4px 17px 0;*/
   list-style: none;
 }
 
@@ -37,12 +36,7 @@ nav {
   max-height: 45px;
 }
 
-nav li:nth-child(2), li:nth-child(7) {
-  @include main_font;
-}
-
-
-nav a {
+nav a, li:nth-child(2), li:nth-child(7) {
   @include main_font;
 }
 

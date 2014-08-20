@@ -83,9 +83,9 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-
+    
     respond_to do |format|
-      format.html { redirect_to photos_url }
+      format.html { redirect_to album_path(@album) }
       format.json { head :no_content }
     end
   end
@@ -94,5 +94,5 @@ end
 private
 
 def the_album
-  # @album = Album.find(params["album_id"])
+  @album = Album.find(params["album_id"])
 end
