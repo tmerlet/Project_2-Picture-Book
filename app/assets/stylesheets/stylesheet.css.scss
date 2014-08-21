@@ -64,7 +64,6 @@ td {
     width: 25%;
     height: auto;
     background-color: $photo_back;
-    vertical-align: bottom;
     margin: 10px;
     padding: 1% 1% 0.25% 1%;
     @include marker_pen;
@@ -253,7 +252,13 @@ footer {
           height: 100%;
           display: block;
           }
-          
+        a {
+          text-decoration: none;
+          color: $nav_color;
+        }
+        a:hover {
+          color: lighten($nav_color, 10%);
+        }
     }
 }
 
