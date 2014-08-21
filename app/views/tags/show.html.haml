@@ -5,9 +5,8 @@
   = link_to 'Back', tags_path
 
 #random_image
-  .image_info
-    %p
-      %b
-      - @tag.photos.each do |photo_tag|
-        / = link_to (image_tag photo_tag.image), album_photo_path(@album, photo_tag)
-        = image_tag photo_tag.image
+  %p
+    - @tag.photos.each do |photo_tag|
+      .image_info
+        / = image_tag photo_tag.image
+        = link_to (image_tag photo_tag.image), album_photo_path(@album, photo_tag)

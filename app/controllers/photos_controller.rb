@@ -70,12 +70,14 @@ class PhotosController < ApplicationController
     photo_params = params[:photo]
     tags = photo_params.delete("tags")
     
-
     @photo = Photo.find(params[:id])
+
     all_tags = tags.map do |tag|
-      Tag.create(name: tag)
+          Tag.find_or_create_by_name(tag)
     end
+    
     @photo.tags = all_tags
+
     @photo.save
     respond_to do |format|
       if @photo.update_attributes(photo_params)
