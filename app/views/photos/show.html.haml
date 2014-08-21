@@ -2,6 +2,7 @@
   window.photo = #{@photo.to_json}
 %p#notice= notice
 
+%h1 
 %p.image-container{:data => {:photo_id => "#{@photo.id}"}}
   #showing_image
     .showing_image_info

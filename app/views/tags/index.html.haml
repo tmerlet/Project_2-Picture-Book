@@ -1,13 +1,8 @@
-%h1 Listing tags
+#album_text
+  %h1 Current tags
 
 .index
   %table
-    %tr
-      %th Name
-      %th
-      %th
-      %th
-
     - @tags.each do |tag|
       %tr
         %td= link_to tag.name, tag
