@@ -1,16 +1,12 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @tag.name
+#album_text
+  %h4= @tag.name
+  = link_to 'Back', tags_path
 
-%p
-  %b Photo(s): (does work just no images to display)
-  - @tag.photos.each do |photo_tag|
-    / = link_to (image_tag photo_tag.image), album_photo_path(@album, photo_tag)
-    = image_tag photo_tag.image
-
-
-= link_to 'Edit', edit_tag_path(@tag)
-\|
-= link_to 'Back', tags_path
+#random_image
+  %p
+    - @tag.photos.each do |photo_tag|
+      .image_info
+        / = image_tag photo_tag.image
+        = link_to (image_tag photo_tag.image), album_photo_path(@album, photo_tag)

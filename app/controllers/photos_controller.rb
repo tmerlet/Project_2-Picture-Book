@@ -67,10 +67,20 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   def update
+    photo_params = params[:photo]
+    tags = photo_params.delete("tags")
+    
     @photo = Photo.find(params[:id])
 
+    all_tags = tags.map do |tag|
+          Tag.find_or_create_by_name(tag)
+    end
+    
+    @photo.tags = all_tags
+
+    @photo.save
     respond_to do |format|
-      if @photo.update_attributes(params[:photo])
+      if @photo.update_attributes(photo_params)
         format.html { redirect_to album_photo_path(@album, @photo), notice: 'Photo was successfully updated.' }
         format.json { head :no_content }
       else

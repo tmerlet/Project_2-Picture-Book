@@ -5,8 +5,7 @@ $(function(){
     function marker(myLatlng, map){
       marker = new google.maps.Marker({
          position: myLatlng,
-         map: map,
-         title:"Hello World!"
+         map: map
       })
     }
 
