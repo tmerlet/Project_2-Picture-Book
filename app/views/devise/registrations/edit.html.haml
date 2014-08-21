@@ -28,6 +28,12 @@
         %br/
         = f.file_field :profile_image
       %div
+      #showwebcam-button Use the Webcam
+      #video.dispnone  
+        %video#webcam{:autoplay => "", :width => "300"}
+        %canvas#screenshot-canvas.dispnone
+        %div#screenshot-button Capture
+      %div
         = f.label :password
         %i (leave blank if you don't want to change it)
         %br/
