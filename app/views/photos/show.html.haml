@@ -28,6 +28,8 @@
           %label#number_of_unlikes
             = @photo.ratings.where(status: "negative").count
         %p
+          = link_to image_tag('share-on-facebook-button.gif', :style => "width: 100px; display: inline;"), 'http://www.facebook.com/sharer.php?u='+@photo.image.url, :target => :blank
+        %p
           %b Description:
           = @photo.description
           
@@ -60,4 +62,6 @@
             = link_to album_path(@album) do
               %i{class: "fa fa-arrow-left"}
     #map-canvas{:style => "width: 40%; height: 300px"}
+
+    
 
