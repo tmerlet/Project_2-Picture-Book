@@ -5,7 +5,7 @@ class Photo < ActiveRecord::Base
   has_many :comments
   belongs_to :album
 
-  attr_accessible :description, :location, :image
+  attr_accessible :description, :location, :image, :tags
   mount_uploader :image, AlbumPhotoUploader
   geocoded_by :location
   after_validation :geocode

@@ -30,9 +30,7 @@
         %p
           %b Description:
           = @photo.description
-        %p
-          %b Location:
-          = @photo.location
+       
         %P 
           %b Tags:
           - @photo.tags.each do |tp|
@@ -43,6 +41,7 @@
         %p
           %b Location:
           = @photo.location
+        %p
           %b Longitude:
           = @photo.longitude
           %b Latitude
