@@ -40,11 +40,11 @@
             Browse
             %ul
               %li
-                %a{:href => "users"} Users
+                = link_to "users", users_path
               %li
-                %a{:href => "albums"} Albums
+                = link_to "albums", albums_path
               %li
-                %a{:href => "tags"} Tags
+                = link_to "tags", tags_path
           %li
             = link_to "My profile", users_path
           %li
