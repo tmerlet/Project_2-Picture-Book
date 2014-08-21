@@ -1,40 +1,42 @@
 <h1>Add Photos to </h1>
 
-<%= form_for [@album, @photo], :remote => true do |f| %>
+<div class='index'>
+    <%= form_for [@album, @photo], :remote => true do |f| %>
 
-Choose Your Photo to upload: 
-<input id="fileupload" type="file" name="photo[image]" multiple>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-<script src="/jquery-file-upload/vendor/jquery.ui.widget.js"></script>
-<script src="/jquery-file-upload/jquery.iframe-transport.js"></script>
-<script src="/jquery-file-upload/jquery.fileupload.js"></script>
-<script>
-    $(function(){
-        $('#fileupload').fileupload({
-            dataType: 'json',
-            url: '<%= album_photos_path(@album) %>',
-            done: function (e, data) {
-                $.each(data.result, function (index, file) {
-                console.log(file)
-                console.log(index)
-                console.log('here') 
-                    $('<li><img src="'+file.url+'"></li>').appendTo('#thumbs');
-                });
-            }
+    Choose Your Photo to upload: 
+    <input id="fileupload" type="file" name="photo[image]" multiple>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="/jquery-file-upload/vendor/jquery.ui.widget.js"></script>
+    <script src="/jquery-file-upload/jquery.iframe-transport.js"></script>
+    <script src="/jquery-file-upload/jquery.fileupload.js"></script>
+    <script>
+        $(function(){
+            $('#fileupload').fileupload({
+                dataType: 'json',
+                url: '<%= album_photos_path(@album) %>',
+                done: function (e, data) {
+                    $.each(data.result, function (index, file) {
+                    console.log(file)
+                    console.log(index)
+                    console.log('here') 
+                        $('<li><img src="'+file.url+'"></li>').appendTo('#thumbs');
+                    });
+                }
+            });
         });
-    });
-</script>
-</br>
+    </script>
+    </br>
+</div>
 
-<%= link_to 'Back', albums_path %> |
-<%= link_to "View Album", album_path(@album) %>
-</br>
-  
+
 <ul id="thumbs" class="cf">
 <!-- json-ajax response here, for thumbnails to appear, see fileupload jquery-->
 </ul>
 
+<div class="index">
+    <%= link_to 'Back', albums_path %> |
+    <%= link_to "View Album", album_path(@album) %>
+    </br>
+</div>    
 
 <% end %>
-
-

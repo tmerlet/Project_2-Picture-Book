@@ -1,15 +1,44 @@
-
+$nav_color: #990000;
+$photo_back: #FFF6EC;
 @mixin marker_pen {
   font-family: 'Permanent Marker', cursive;
 }
 
-
-
 body {
   background: url('wood_background.jpg') fixed;
-  margin-top: 70px;
-  max-width: 1400px;
-  margin-bottom: 50px;
+}
+
+h1 {
+  color: $nav_color;
+}
+
+a:visited {
+  text-decoration: none;
+  font-color: black;
+}
+
+th {
+    font-weight: bold;
+  }
+td {
+  padding: 20px;
+}
+
+.index {
+  @include marker_pen;
+  color: $nav_color;
+  background: $photo_back;
+  width: 70%;
+  margin: 0 auto 0 auto;
+  border-radius: 20px;
+  padding-bottom: 20px 20px 120px 20px;
+    a {
+      text-decoration: none;
+      color: $nav_color;
+    }
+    a:hover{
+      color: darken($nav_color, 50%)
+    }
 }
 
 /*.header_div {
@@ -27,7 +56,7 @@ body {
   img {
     width: 75%;
     height: auto;
-    border: #FFFFF1 solid;
+    /*border: #FFFFEF;*/
     border-width: 50px 50px 250px 50px;
     border-radius: 10px;
   }
@@ -43,10 +72,10 @@ body {
     display: inline-block;
     width: 25%;
     height: auto;
-    background-color: #FFFFF1;
+    background-color: $photo_back;
     vertical-align: bottom;
     margin: 10px;
-    padding: 3% 3% 2% 3%;
+    padding: 1% 1% 0.25% 1%;
     @include marker_pen;
     font-size: 12px;
     text-align: left;
@@ -59,7 +88,22 @@ body {
 }
 
 #album_text {
+  width: 50%;
   margin-top: 50px;
+  @include marker_pen;
+  color: $nav_color;
+  background: $photo_back;
+  font-size: 20px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+    a {
+      text-decoration: none;
+      color: $nav_color;
+    }
+    a:hover{
+      color: darken($nav_color, 10%)
+    }
     li {
       padding:  10px;
       list-style: none;
@@ -76,56 +120,158 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   left: 0;
-  line-height: 200px;
+  /*line-height: center;*/
   margin: auto;
   top: 50%;
   width: 100%;
   text-align: center;
   padding-bottom: 40px;
+    a {
+      color: $nav_color;
+      @include marker_pen;
+    }  
+    h1 {
+      @include marker_pen;
+      font-size: 70px;
+    }
 }
 
 .home_box {
-  border: black solid 10px;
-  background: white;
-  opacity: 0.6;
+  border: $nav_color solid 10px;
+  background: $photo_back;
+  /*opacity: 0.6;*/
   border-radius: 10px;
-  font-color: red;
-  width: 200px;
-  height: 200px;
+  font-color: $nav_color;
+  width: 31%;
+  height: 30px;
   display: inline-block;
   margin: auto;
   text-decoration: none;
-  font-color: black;
+  font-color: $nav_color;
 }
 
 .home_box a{
   text-decoration: none;
-  font-color: black;
+  font-color: $nav_color;
 }
 
 
 footer {
-  border-top: 3px solid black;
-  background-color: gray;
+  padding-bottom: 5px;
+  background-color: $nav_color;
   text-align: center;
   height: 50px;
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  right:0px;
-  margin-bottom:0px;
+  /*position: relative;*/
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  
+  @include marker_pen
+}
+
+.other {
+  width: 100%;
+  background: $photo_back;
+  width: 70%;
+  margin: auto;
+}
+
+.other_info {
+  margin-top: 100px;
+  color: $nav_color;
+/*$photo_back: #FFF6EC;*/
+  @include marker_pen;
+  padding: 10px;
 }
 
 .footer {
   display: inline-block;
   margin-right: 10px;
   color: white;
+    a {
+      text-decoration: none;
+      color: white;
+    }
+} 
+
+#edit_image {
+  color: #990000;
+  width: 100%;
+  padding-bottom: 20px;
+    p button:last-child {
+      float: left;
+    }
+    .edit_image_info {
+      display: inline-block;
+      width: 40%;
+      height: auto;
+      background-color: $photo_back;
+      vertical-align: bottom;
+      margin: 10px;
+      padding: 3% 3% 2% 3%;
+      @include marker_pen;
+      font-size: 20px;
+      text-align: left;
+      border-radius: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          }
+    }
 }
 
-.footer a {
-  text-decoration: none;
-  color: white;
+#showing_image {
+  color: #990000;
+  margin-top: 500px;
+  width: 100%;
+  float: left;
+  margin-top: auto;
+  padding-bottom: 20px;
+  margin-left: 30px;
+    p button:last-child {
+      float: left;
+    }
+    .showing_image_info {
+      display: inline-block;
+      width: 40%;
+      height: auto;
+      background-color: $photo_back;
+      vertical-align: bottom;
+      margin: 10px;
+      padding: 3% 3% 2% 3%;
+      @include marker_pen;
+      font-size: 20px;
+      text-align: left;
+      border-radius: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          }
+    }
 }
+
+#map-canvas {
+  float: right;
+  margin-top: 10%;
+  margin-right: 5%;
+}
+
+.bottom_buttons {
+  margin-left: auto;
+    a {
+      background: $photo_back;
+      color: $nav_color;
+      text-decoration: none;
+      @include marker_pen;
+      padding: 0px 20px 0px 0px;
+    }
+    a:hover {
+      color: lighten($nav_color, 10%);
+    }
+}
+
 
 /*
 
