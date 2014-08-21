@@ -3,67 +3,9 @@
 %p#notice= notice
 
 %p.image-container{:data => {:photo_id => "#{@photo.id}"}}
-  %b Image
   #showing_image
     .showing_image_info
       = image_tag @photo.image
-<<<<<<< HEAD
-    %p 
-      %b ratings:
-      %b
-      %td
-        %button#like
-          - if @ratingpositive.count > 0
-            %i{class: "fa fa-thumbs-up", :data => {:likerating_id => "#{@ratingpositive.first.id}"}}
-          - else
-            %i{class: "fa fa-thumbs-o-up"}
-      %td
-        %label#number_of_likes
-          = @photo.ratings.where(status: "positive").count
-      %td
-        %button#unlike
-          - if @ratingnegative.count > 0
-            %i{class: "fa fa-thumbs-down", :data => {:unlikerating_id => "#{@ratingnegative.first.id}"}}
-          - else
-            %i{class: "fa fa-thumbs-o-down"}
-      %td
-        %label#number_of_unlikes
-          = @photo.ratings.where(status: "negative").count
-
-    %p
-      %b Description:
-      = @photo.description
-    %p
-      %b Location:
-      = @photo.location
-    %P 
-      %b Tags:
-      - @photo.tags.each do |tp|
-        = link_to tp.name, tp
-
-%p
-  %b Description:
-  = @photo.description
-%p
-  %b Location:
-  = @photo.location
-  %b Longitude:
-  = @photo.longitude
-  %b Latitude
-  = @photo.latitude
-%p 
-  %b Tags:
-  - @photo.tags.each do |tp|
-    = link_to tp.name, tp
-
-%p 
-  %b Comments:
-  %input#new-comment{:placeholder => "?", :type => "text"}
-  %input#currentphoto{:type=>"hidden", name: :photo_id, value: "#{@photo.id}"}
-  %table#comment-list
-    %tr
-      %th 
-      %th
       %p 
         %b ratings:
         %b
@@ -111,30 +53,17 @@
             = link_to tp.name, tp
           %p 
             %b Comments:
-            %input#new-comment{:placeholder => "What's your comment...", :type => "text_field"}
+            %textarea#new-comment{:placeholder => "What's your comment..."}
             %input#currentphoto{:type=>"hidden", name: :photo_id, value: "#{@photo.id}"}
             %table#comment-list
               %tr
                 %th 
                 %th
           .bottom_buttons
-            = link_to "Edit", edit_album_photo_path(@album,@photo)
-            %l{class: "fa fa-pencil"}
-            = link_to "Delete", album_photo_path(@album,@photo), method: :delete
-            %li{class: "fa fa-trash-o"}
-            / Photo will get deleted, but the comments will still remain in the database
-            = link_to "Back", album_photo_path(@album, @photo)
-            %li{class: "fa fa-arrow-left"}
-
-
-#map-canvas{:style => "width: 30%; height: 30%"}
-// Can't get any styling on the map, want to float it right
-
-
-
-= link_to "Edit", edit_album_photo_path(@album,@photo)
-= link_to "Delete", album_photo_path(@album,@photo), method: :delete
-/ Photo will get deleted, but the comments will still remain in the database
-= link_to "Back", album_photo_path(@album, @photo)
-=======
->>>>>>> more_styling
+            = link_to edit_album_photo_path(@album,@photo) do
+              %i{class: "fa fa-pencil"}
+            = link_to album_photo_path(@album,@photo), method: :delete do
+              %i{class: "fa fa-trash-o"}
+            = link_to album_photo_path(@album, @photo) do
+              %i{class: "fa fa-arrow-left"}
+    #map-canvas{:style => "width: 600px; height: 300px"}          

@@ -1,3 +1,10 @@
+$nav_color: #990000;
+$photo_back: #FFF6EC;
+@mixin marker_pen {
+  font-family: 'Permanent Marker', cursive;
+}
+
+
 .signup_page {
   background: url('signup.jpg') fixed;
   background-size: cover;
@@ -21,33 +28,40 @@
 }
 
 .signup_form {
-  border: black solid 10px;
-  background: white;
-  opacity: 0.6;
+  border: solid $nav_color 10px;
+  background: $photo_back;
+  /*opacity: 0.6;*/
   border-radius: 10px;
-  font-color: red;
+  font-color: $nav_color;
   width: 300px;
   padding: 10px 10px 20px 50px;
   display: inline-block;
   margin: auto;
   text-decoration: none;
-  font-color: black;
+  /*font-color: black;*/
   margin-top: 20px;
+   h2, form, a {
+      @include marker_pen;
+      color: $nav_color;
+    }
 }
 
 .signin_form {
-  border: black solid 10px;
-  background: white;
-  opacity: 0.6;
+  border: solid $nav_color 10px;
+  background: $photo_back;
+  /*opacity: 0.6;*/
   border-radius: 10px;
-  font-color: red;
+  font-color: $nav_color;
   width: 300px;
   padding: 10px 10px 20px 50px;
   display: inline-block;
   margin: auto;
   text-decoration: none;
-  font-color: black;
   margin-top: 100px;
+    h2, form, a {
+      @include marker_pen;
+      color: $nav_color;
+    }
 }
 
 
