@@ -1,3 +1,5 @@
+var imageString = null;
+
 function onFailure(err) {
     alert("The following error occured: " + err.name);
 }
@@ -29,6 +31,8 @@ jQuery(document).ready(function () {
       //  canvas.width = 300 didn't work the canvas was that size but the image was badly cropped
       // 
       ctx.drawImage(video, 0, 0);
+      imageString = canvas.toDataURL('image/png')
+      console.log("imageString", imageString)
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       // document.querySelector('img').src = canvas.toDataURL('image/webp');
