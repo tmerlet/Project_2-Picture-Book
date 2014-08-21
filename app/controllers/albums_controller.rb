@@ -41,7 +41,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
-    @photo = Photo.find(params[:id])
+    @photo = Photo.all
   end
 
   # POST /albums
@@ -65,7 +65,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1.json
   def update
     @album = Album.find(params[:id])
-    @photo = Photo.find(params[:id])
+    @photo = Photo.all
 
     respond_to do |format|
       if @album.update_attributes(params[:album])
