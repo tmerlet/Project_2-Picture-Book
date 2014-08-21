@@ -1,3 +1,6 @@
+:javascript
+  window.user = #{@user.to_json}
+
 %body.signup_page
   %div.signup_form
     %h2 Sign up
@@ -18,7 +21,7 @@
       %div
         = f.label :dob
         %br/
-        = f.date_select :dob
+        = f.date_select :dob, start_year: 1914, end_year: 2014
       %div 
         = f.label :profile_image
         %br/
@@ -33,3 +36,9 @@
         = f.password_field :password_confirmation, autocomplete: "off"
       %div= f.submit "Sign up"
     = render "devise/shared/links"
+
+    #video
+      %video#webcam{:autoplay => "", :width => "300"}
+      %canvas#screenshot-canvas
+      %br
+      %button#screenshot-button Capture

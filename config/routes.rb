@@ -16,7 +16,10 @@ Photoapp::Application.routes.draw do
 
   resources :tags
 
-  resources :index #PK need to amend this as only need index and show route (and the show route is already displayed below as the root page)
+  resources :index, :only => [:show, :index] 
+
+  #PK need to amend this as only need index and show route (and the show route is already displayed below as the root page)
+      # AW sorted this
 
   root :to => 'index#show'
 

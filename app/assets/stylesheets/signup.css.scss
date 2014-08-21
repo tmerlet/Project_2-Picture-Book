@@ -49,3 +49,24 @@
   font-color: black;
   margin-top: 100px;
 }
+
+
+/* added by toby for webcam, can be moved around: */
+
+
+video {
+  /*width: 307px;*/
+  width: 300px;
+  /*height: 250px;*/
+  background: rgba(255,255,255,1);
+  border: 1px solid #ccc;
+}
+
+canvas {
+  /*width: 307px;*/
+  /*height: 250px;*/
+  width: 300px;
+  background: rgba(255,255,255,1);
+  border: 1px solid #ccc;
+}
+
