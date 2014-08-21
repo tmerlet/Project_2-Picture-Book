@@ -5,7 +5,6 @@ class RegistrationsController < Devise::RegistrationsController
     super
 
     @user.profile_image = uploaded_picture(params[:canvasimage])
-    binding.pry
     @user.save
   end
 
