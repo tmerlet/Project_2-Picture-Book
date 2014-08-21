@@ -40,6 +40,10 @@ td {
     a:hover{
       color: darken($nav_color, 50%)
     }
+    p, li, a {
+      padding: 5px;
+      margin-left: 5px;
+    }
 }
 
 #show_image {
@@ -143,19 +147,6 @@ td {
 .home_box a{
   text-decoration: none;
   font-color: $nav_color;
-}
-
-
-footer {
-  padding-bottom: 5px;
-  background-color: $nav_color;
-  text-align: center;
-  height: 50px;
-  /*position: relative;*/
-  position: fixed;
-  bottom: 0px;
-  width: 100%;
-  @include marker_pen
 }
 
 .other {
