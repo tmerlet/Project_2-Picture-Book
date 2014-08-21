@@ -54,18 +54,20 @@
             = link_to tp.name, tp
           %p 
             %b Comments:
-            %input#new-comment{:placeholder => "?", :type => "text"}
+            %input#new-comment{:placeholder => "What's your comment...", :type => "text_field"}
             %input#currentphoto{:type=>"hidden", name: :photo_id, value: "#{@photo.id}"}
             %table#comment-list
               %tr
                 %th 
                 %th
-                
-.bottom_buttons
-  = link_to "Edit", edit_album_photo_path(@album,@photo)
-  = link_to "Delete", album_photo_path(@album,@photo), method: :delete
-  / Photo will get deleted, but the comments will still remain in the database
-  = link_to "Back", album_photo_path(@album, @photo)
+          .bottom_buttons
+            = link_to "Edit", edit_album_photo_path(@album,@photo)
+            %l{class: "fa fa-pencil"}
+            = link_to "Delete", album_photo_path(@album,@photo), method: :delete
+            %li{class: "fa fa-trash-o"}
+            / Photo will get deleted, but the comments will still remain in the database
+            = link_to "Back", album_photo_path(@album, @photo)
+            %li{class: "fa fa-arrow-left"}
 
 #map-canvas{:style => "width: 30%; height: 30%"}
 // Can't get any styling on the map, want to float it right

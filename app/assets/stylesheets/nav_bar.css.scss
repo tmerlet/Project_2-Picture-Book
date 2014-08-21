@@ -1,3 +1,4 @@
+$nav_color: #990000;
 @mixin main_font {
   font-family: 'Permanent Marker', cursive;
 }
@@ -7,7 +8,7 @@ header {
   top: 0px; 
   width: 100%;
   text-align: center; 
-  background: #A3ADB8;
+  background: $nav_color;
   max-height: 100px;
 }
 
@@ -24,7 +25,6 @@ nav {
 }
 
 .nav li {
-  font: bold 12px/18px sans-serif;
   display: inline-block;
   margin-right: -4px;
   position: relative;
@@ -40,11 +40,6 @@ nav a, li:nth-child(2), li:nth-child(7) {
   @include main_font;
 }
 
-.nav li:hover {
-  background: #555;
-  color: #fff;
-}
-
 .nav a {
   text-decoration: none;
   color: white;
@@ -52,8 +47,8 @@ nav a, li:nth-child(2), li:nth-child(7) {
 
 .nav li ul {
 ul li:hover {
-  background: #555;
-  color: #fff;
+  background: $nav_color;
+  color: $nav_color;
   }
 }
 
@@ -69,13 +64,13 @@ ul li ul {
 }
 
 .nav li ul li { 
-  background: #555; 
+  background: $nav_color; 
   display: block; 
-  color: #fff;
+  color: $nav_color
 }
 
 .nav li ul li:hover { 
-  background: #666; 
+  background: darken($nav_color, 10%); 
 }
 
 .nav li:hover ul {
@@ -84,7 +79,7 @@ ul li ul {
   visibility: visible;
 }
 
-ul li ul li:hover { background: #666; }
+ul li ul li:hover { background: $nav_color }
 ul li:hover ul {
   display: block;
   opacity: 1;
