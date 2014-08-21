@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     @albums = Album.all
-    @comment = Comment.find(params[:id])
-    @photo = Photo.find(params[:id])
+    #changed @comment & @photo to '.all' rather than '.find(params[:id])' so that when user clicks on my profile it will display their profile only.
+    @comment = Comment.all
+    @photo = Photo.all
     
   end
 

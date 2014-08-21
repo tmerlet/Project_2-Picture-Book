@@ -54,7 +54,8 @@
               = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
               = f.submit
           %li
-            = if current_user.role == "admin"
+            - #if current_user.role == "admin"
+            - if can? :manage, User
               = link_to "Manage site", users_path
           %li
             - if user_signed_in?

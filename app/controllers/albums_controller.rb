@@ -42,6 +42,7 @@ class AlbumsController < ApplicationController
   # GET /albums/1/edit
   def edit
     @album = Album.find(params[:id])
+    authorize! :edit, @album
     @photo = Photo.find(params[:id])
   end
 
@@ -83,6 +84,7 @@ class AlbumsController < ApplicationController
   # DELETE /albums/1.json
   def destroy
     @album = Album.find(params[:id])
+    authorize! :destroy, @album
     @album.destroy
 
     respond_to do |format|

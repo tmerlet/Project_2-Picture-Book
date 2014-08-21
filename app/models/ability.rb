@@ -6,9 +6,7 @@ class Ability
     if user.role? :admin
       can :manage, :all
     else
-      can :read, User
-      can :read, Comment
-      can :show, Album
+      can :read, :all
     end
   end
 end
