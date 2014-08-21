@@ -30,6 +30,8 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "off"
+      %div
+        %input#canvasimage{:name => "canvasimage", :type => "hidden", :value => ""} 
       %div= f.submit "Sign up"
     = render "devise/shared/links"
 
@@ -38,3 +40,4 @@
       %canvas#screenshot-canvas
       %br
       %button#screenshot-button Capture
+

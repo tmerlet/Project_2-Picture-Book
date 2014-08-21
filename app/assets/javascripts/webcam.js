@@ -33,6 +33,9 @@ jQuery(document).ready(function () {
       ctx.drawImage(video, 0, 0);
       imageString = canvas.toDataURL('image/png')
       console.log("imageString", imageString)
+      $('#canvasimage').attr('value', imageString)
+
+
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       // document.querySelector('img').src = canvas.toDataURL('image/webp');
