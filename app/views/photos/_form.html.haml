@@ -15,8 +15,8 @@
       .field
         = f.label :location
         = f.text_field :location
-      / .field
-      /   = f.label :tags
-      /   = f.text_field :tags
+      .field
+        = f.label :tags
+        %input{name: "photo[tags][]"}
       .actions
         = f.submit 'Save'
