@@ -21,10 +21,15 @@ jQuery(document).ready(function () {
     }
 
     var button = document.querySelector('#screenshot-button');
+    var webbutton = document.querySelector('#showwebcam-button');
     var canvas = document.querySelector('#screenshot-canvas');
     var ctx = canvas.getContext('2d');
      
-    function snapshot() {
+    function snapshot(event) {
+      event.preventDefault();
+
+      $('#screenshot-canvas').toggleClass('dispnone')
+      $('#webcam').toggleClass('dispnone')
 
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
@@ -33,11 +38,22 @@ jQuery(document).ready(function () {
       ctx.drawImage(video, 0, 0);
       imageString = canvas.toDataURL('image/png')
       console.log("imageString", imageString)
+      $('#canvasimage').attr('value', imageString)
+
+
       // "image/webp" works in Chrome.
       // Other browsers will fall back to image/png.
       // document.querySelector('img').src = canvas.toDataURL('image/webp');
     }
+
+    function showwebcam(event){
+      event.preventDefault();
+      $('#video').toggleClass('dispnone')
+    }
+
+
     button.addEventListener('click',snapshot, false);
+    webbutton.addEventListener('click',showwebcam, false);
   }
 });
 
