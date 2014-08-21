@@ -4,13 +4,8 @@ $photo_back: #FFF6EC;
   font-family: 'Permanent Marker', cursive;
 }
 
-
-
 body {
   background: url('wood_background.jpg') fixed;
-  /*margin-top: 70px;*/
-  max-width: 1400px;
-  margin-bottom: 100px;
 }
 
 h1 {
@@ -125,22 +120,30 @@ td {
   background-size: cover;
   background-repeat: no-repeat;
   left: 0;
-  line-height: 200px;
+  /*line-height: center;*/
   margin: auto;
   top: 50%;
   width: 100%;
   text-align: center;
   padding-bottom: 40px;
+    a {
+      color: $nav_color;
+      @include marker_pen;
+    }  
+    h1 {
+      @include marker_pen;
+      font-size: 70px;
+    }
 }
 
 .home_box {
   border: $nav_color solid 10px;
-  background: white;
-  opacity: 0.6;
+  background: $photo_back;
+  /*opacity: 0.6;*/
   border-radius: 10px;
   font-color: $nav_color;
-  width: 200px;
-  height: 200px;
+  width: 31%;
+  height: 30px;
   display: inline-block;
   margin: auto;
   text-decoration: none;
@@ -152,6 +155,7 @@ td {
   font-color: $nav_color;
 }
 
+
 footer {
   padding-bottom: 5px;
   background-color: $nav_color;
@@ -161,8 +165,23 @@ footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  clear: both;
+  
   @include marker_pen
+}
+
+.other {
+  width: 100%;
+  background: $photo_back;
+  width: 70%;
+  margin: auto;
+}
+
+.other_info {
+  margin-top: 100px;
+  color: $nav_color;
+/*$photo_back: #FFF6EC;*/
+  @include marker_pen;
+  padding: 10px;
 }
 
 .footer {
@@ -174,6 +193,33 @@ footer {
       color: white;
     }
 } 
+
+#edit_image {
+  color: #990000;
+  width: 100%;
+  padding-bottom: 20px;
+    p button:last-child {
+      float: left;
+    }
+    .edit_image_info {
+      display: inline-block;
+      width: 40%;
+      height: auto;
+      background-color: $photo_back;
+      vertical-align: bottom;
+      margin: 10px;
+      padding: 3% 3% 2% 3%;
+      @include marker_pen;
+      font-size: 20px;
+      text-align: left;
+      border-radius: 40px;
+        img {
+          width: 100%;
+          height: 100%;
+          display: block;
+          }
+    }
+}
 
 #showing_image {
   color: #990000;
@@ -208,7 +254,8 @@ footer {
 
 #map-canvas {
   float: right;
-  margin-top: auto;
+  margin-top: 10%;
+  margin-right: 5%;
 }
 
 .bottom_buttons {
@@ -218,6 +265,7 @@ footer {
       color: $nav_color;
       text-decoration: none;
       @include marker_pen;
+      padding: 0px 20px 0px 0px;
     }
     a:hover {
       color: lighten($nav_color, 10%);
@@ -236,3 +284,8 @@ footer {
   position: absolute;
 
 }*/
+
+.dispnone {
+  display: none;
+}
+

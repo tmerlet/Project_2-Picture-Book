@@ -13,8 +13,8 @@ class User < ActiveRecord::Base
   attr_accessible :role, :email, :password, :password_confirmation, :remember_me, :profile_image, :name, :dob
   # attr_accessible :title, :body
 
-  mount_uploader :profile_image,
-  ProfileImageUploader
+
+  mount_uploader :profile_image, ProfileImageUploader
 
   def role?(role)
     self.role.to_s == role.to_s
