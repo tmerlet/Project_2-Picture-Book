@@ -17,9 +17,9 @@ nav {
   display: fixed;
   max-height: 100px;
   width: 100%;
-  h1 {
-    color: white;
-  }
+    li:first-child {
+     font-size: 20px; 
+    }
 }
 
 .nav {
@@ -30,12 +30,10 @@ nav {
 
 .nav li {
   display: inline-block;
-  /*margin-right: -4px;*/
   position: relative;
   padding: 13px 20px;
   cursor: pointer;
   text-decoration: none;
-  font-family: arial;
   color: white;
   max-height: 45px;
 }

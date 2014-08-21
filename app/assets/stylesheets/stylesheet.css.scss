@@ -10,6 +10,10 @@ body {
 }
 
 h1 {
+  margin-top: 100px;
+  font-size: 50px;
+  text-align: center;
+  @include marker_pen;
   color: $nav_color;
 }
 
@@ -38,7 +42,7 @@ td {
       color: $nav_color;
     }
     a:hover{
-      color: darken($nav_color, 50%)
+      color: darken($nav_color, 10%)
     }
     p, li, a {
       padding: 5px;
@@ -204,6 +208,15 @@ td {
 #album_text h4 {
   text-align: center;
   font-size: 40px;
+  border-radius: 20px;
+}
+
+#album_text {
+  border-radius: 20px;
+}
+
+.image_info {
+  vertical-align: top;
 }
 
 #showing_image {
@@ -214,6 +227,7 @@ td {
   margin-top: auto;
   padding-bottom: 20px;
   margin-left: 30px;
+  vertical-align: top;
     p button:last-child {
       float: left;
     }
@@ -230,7 +244,6 @@ td {
       width: 40%;
       height: auto;
       background-color: $photo_back;
-      vertical-align: bottom;
       margin: 10px;
       padding: 3% 3% 2% 3%;
       float: left;
@@ -267,6 +280,16 @@ td {
     }
 }
 
+.social-share-button {
+  margin-left: 60px;
+    a {
+      margin-left: 2px;
+    }
+  }
+
+#autocomplete {
+  z-index: 100px;
+}
 
 /*
 
