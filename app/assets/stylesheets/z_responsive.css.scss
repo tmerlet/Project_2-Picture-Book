@@ -1,4 +1,27 @@
+$nav_color: #990000;
+
 @media only screen and (min-width: 640px) and (max-width: 980px) {
+   .nav, li:first-child, li:nth-child(2), li:nth-child(3), li:nth-child(4){
+      display: inline-block;
+      float: left;
+    }
+
+      nav li:nth-child(2) {
+      z-index: 1000;
+    }
+
+     nav li:first-child, li:nth-child(5), li:nth-child(6), li:nth-child(7){
+      display: inline-block;
+      float: right;
+    }
+
+    .nav {
+      background: $nav_color;
+    }
+     h1 {
+      margin-top: 400px;
+    }
+
     #random_image {
       .image_info {
         width: 40%;
@@ -7,6 +30,28 @@
 }
 
 @media only screen and (min-width: 320px) and (max-width: 640px) {
+    .nav, li:first-child, li:nth-child(2), li:nth-child(3), li:nth-child(4){
+      display: inline-block;
+      float: left;
+    }
+
+    nav li:nth-child(2) {
+      z-index: 1000;
+    }
+
+     nav li:first-child, li:nth-child(5), li:nth-child(6), li:nth-child(7){
+      display: inline-block;
+      float: right;
+    }
+
+    .nav {
+      background: $nav_color;
+    }
+
+    h1 {
+      margin-top: 420px;
+    }
+
     #random_image {
       .image_info {
         width: 80%;
