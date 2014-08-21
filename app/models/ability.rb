@@ -7,6 +7,8 @@ class Ability
       can :manage, :all
     else
       can :read, User
+      can :read, Comment
+      can :show, Album
     end
   end
 end
