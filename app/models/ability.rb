@@ -5,7 +5,7 @@ class Ability
     user ||= User.new
     if user.role? :admin
       can :manage, :all
-    else
+    else user.role? :user
       can :read, [Tag, User]
       can :read, [Album, Photo, Comment]
       can [:edit, :update, :destroy], Album do |album|
@@ -20,9 +20,6 @@ class Ability
       can :create, Photo do |photo|
         album.user_id == user.id
       end
-
-      
-    
     end
   end
 end

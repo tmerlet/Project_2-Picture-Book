@@ -11,8 +11,6 @@ class UsersController < ApplicationController
     #changed @comment & @photo to '.all' rather than '.find(params[:id])' so that when user clicks on my profile it will display their profile only.
     @comment = Comment.all
     @photo = Photo.all
-    
   end
-
 
 end
