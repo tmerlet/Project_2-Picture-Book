@@ -44,13 +44,13 @@ class AlbumsController < ApplicationController
   def edit
     @album = Album.find(params[:id])
     authorize! :edit, @album
-    @photo = Photo.find(params[:id])
+    @photo = Photo.all
   end
 
   # POST /albums
   # POST /albums.json
   def create
-    @album = Album.new(params[:album])
+    @album = current_user.albums.new(params[:album])
     @photo = Photo.new(params[:photo])
 
     respond_to do |format|
@@ -68,7 +68,7 @@ class AlbumsController < ApplicationController
   # PUT /albums/1.json
   def update
     @album = Album.find(params[:id])
-    @photo = Photo.find(params[:id])
+    @photo = Photo.all
 
     respond_to do |format|
       if @album.update_attributes(params[:album])

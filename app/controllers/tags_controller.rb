@@ -39,6 +39,8 @@ class TagsController < ApplicationController
   # GET /tags/1/edit
   def edit
     @tag = Tag.find(params[:id])
+    authorize! :edit, @tag
+
   end
 
   # POST /tags
@@ -78,6 +80,7 @@ class TagsController < ApplicationController
   def destroy
     @tag = Tag.find(params[:id])
     @tag.destroy
+    authorize! :destroy, @tag
 
     respond_to do |format|
       format.html { redirect_to tags_url }

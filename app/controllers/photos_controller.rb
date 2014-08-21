@@ -48,6 +48,7 @@ class PhotosController < ApplicationController
   # GET /photos/1/edit
   def edit
     @photo = Photo.find(params[:id])
+    authorize! :edit, @photo
   end
 
   # POST /photos
@@ -84,6 +85,7 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
+    authorize! :photo, @photo
     
     respond_to do |format|
       format.html { redirect_to album_path(@album) }

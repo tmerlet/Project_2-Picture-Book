@@ -12,7 +12,7 @@
       %tr
         %td= link_to tag.name, tag
         / %td= link_to 'Edit', edit_tag_path(tag)
-        %td= link_to 'Destroy', tag, :method => :delete, :data => { :confirm => 'Are you sure?' }
+        %td= link_to 'Destroy', tag, :method => :delete, :data => { :confirm => 'Are you sure?' } if can? :destroy, tag
 
   = paginate @tags
   / = link_to 'New Tag', new_tag_path
