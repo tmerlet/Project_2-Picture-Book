@@ -10,6 +10,10 @@
     %h2 Sign up
     = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
       = devise_error_messages!
+      // %div
+      //  = f.label :role
+      //  %br
+      //  = f.text_field :role
       %div
         = f.label :email
         %br/
@@ -27,6 +31,14 @@
         %br/
         = f.file_field :profile_image
       %div
+      %button#showwebcam-button Use the Webcam
+      #video.dispnone  
+        %video#webcam{:autoplay => "", :width => "300"}
+        %canvas#screenshot-canvas.dispnone
+        %button#screenshot-button Capture
+        
+        
+      %div
         = f.label :password
         %br/
         = f.password_field :password, autocomplete: "off"
@@ -34,11 +46,9 @@
         = f.label :password_confirmation
         %br/
         = f.password_field :password_confirmation, autocomplete: "off"
+      %div
+        %input#canvasimage{:name => "canvasimage", :type => "hidden", :value => ""} 
       %div= f.submit "Sign up"
     = render "devise/shared/links"
 
-    #video
-      %video#webcam{:autoplay => "", :width => "300"}
-      %canvas#screenshot-canvas
-      %br
-      %button#screenshot-button Capture
+

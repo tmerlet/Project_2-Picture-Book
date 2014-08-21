@@ -13,20 +13,25 @@
       - if album.user_id == @user.id
         %li= link_to album.name, album
 
-  %table
-    %tr
-      %th Comment
-      %th Photo ID
-      %th Photo
+        = link_to 'New Album', new_album_path if can? :edit, @user
+        = link_to 'Edit', edit_user_registration_path  if can? :edit, @user
+        / can only edit the current user who is logged in
+        = link_to 'Back', users_path
+
+        %table
+          %tr
+            %th Comment
+            %th Photo ID
+            %th Photo
 
 
-    %tr
-      %td= @comment.content
-      %td= @comment.photo_id
-      %td= @photo.image
+  /PK: Commented this out so that when a user clicks on "mr profile" in the header it shows only their profile. With this code in it causes an error.
+  
+  / %tr
+  /   %td= @comment.content
+  /   %td= @comment.photo_id
+  /   %td= @photo.image
 
-  = link_to 'Edit', edit_user_registration_path
-  / can only edit the current user who is logged in
-  = link_to 'Back', users_path
 
-  = link_to 'New Album', new_album_path
+
+

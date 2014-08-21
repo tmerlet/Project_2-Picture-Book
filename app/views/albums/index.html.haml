@@ -17,10 +17,9 @@
       / would be good to link this to the user_show page
       %td= link_to album.name, album
       %td= album.description
-      %td= link_to 'Upload Photos', new_album_photo_path(album)
-      %td= link_to 'Edit', edit_album_path(album) 
-      %td= link_to 'Destroy', album, :method => :delete, :data => { :confirm => 'Are you sure?' }
-      %br
+      %td= link_to 'Upload Photos', new_album_photo_path(album) if can? :edit, album
+      %td= link_to 'Edit', edit_album_path(album) if can? :edit, album
+      %td= link_to 'Destroy', album, :method => :delete, :confirm => 'Are you sure?' if can? :destroy, album
 
 = paginate @albums
 

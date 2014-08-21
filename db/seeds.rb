@@ -7,11 +7,11 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-user1 = User.create(name: "Piers", email: "piers@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'piersprofilepic.jpg')))
+user1 = User.create(role: "admin", name: "Piers", email: "piers@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'piersprofilepic.jpg')))
 
-user2 = User.create(name: "Alex", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'alexprofilepic.jpg')))
+user2 = User.create(role: "admin", name: "Alex", email: "alex@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'alexprofilepic.jpg')))
 
-user3 = User.create(name: "Toby", email: "toby@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'tobyprofilepic.jpg'))) 
+user3 = User.create(role: "admin", name: "Toby", email: "toby@ga.com", password: "password", password_confirmation: "password", dob: "12/04/2012", profile_image: File.open(File.join(Rails.root.join('public'), 'tobyprofilepic.jpg'))) 
 
 album1 = Album.create(name: "Funny business", description: "Load of random stuff")
 
