@@ -2,7 +2,7 @@ class TagsController < ApplicationController
   # GET /tags
   # GET /tags.json
   def index
-    @tags = Tag.all
+    @tags = Tag.order(:name).page(params[:page])
 
     respond_to do |format|
       format.html # index.html.erb

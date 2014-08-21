@@ -4,7 +4,7 @@ class AlbumsController < ApplicationController
   def index
     # PK: Check out the application controller for the method for this.
     @user = User.all
-    @albums = Album.all
+    @album = Album.order(:name).page(params[:page])
     # @album = Album.find(params[:id])
     respond_to do |format|
       format.html # index.html.erb

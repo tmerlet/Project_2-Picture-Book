@@ -1,17 +1,17 @@
 %h1 All Users
 
-%table
-  %tr
-    %th User
-    %th User Name
-    %th Profile Image
-
-  - @users.each do |user|
+.index
+  %table
     %tr
-      %td= link_to user.name, user
-      %td= user.username
-      %td= image_tag(user.profile_image.thumb.url)
+      %th User
+      / %th User Name
+      %th Profile Image
+    - @users.each do |user|
+      %tr
+        %td= link_to user.name, user
+        /   %td= user.username
+        %td= image_tag(user.profile_image.thumb.url)
 
-/ already has a default class of 'pagination' AW
-= paginate @users
-%br
+  / already has a default class of 'pagination' AW
+  = paginate @users
+  %br
