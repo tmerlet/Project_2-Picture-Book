@@ -1,18 +1,18 @@
 #album_text
-  %li Listing albums
+  %h1 Current Albums
 
 .index
   %table
     %tr
       %th User
-      %th Name
+      %th Album 
       %th Description
       %th
       %th
       %th
     - @albums.each do |album|
       %tr
-      %td= album.user_id
+      %td= album.user.name
       / show which user the album belongs to
       / would be good to link this to the user_show page
       %td= link_to album.name, album

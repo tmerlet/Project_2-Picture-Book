@@ -33,10 +33,11 @@
   %body 
     %header
       %nav
+        %i= social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
         %ul.nav
           %li
             %a{:href => "/index"}
-              %h1 Picture Board
+              %l Picture Board
           %li
             Browse
             %ul
@@ -52,7 +53,7 @@
             = link_to "New album", new_album_path
           %li.search
             = search_form_for @q do |f|
-              = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
+              = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "Search for ...", id: "autocomplete"
               = f.submit
           %li
             = link_to "Manage site", users_path if can? :manage, :all
@@ -66,17 +67,8 @@
                 = link_to "Sign up", new_user_registration_path
               %li
                 = link_to "Login", new_user_session_path
-    %p
-    /  = social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
-    %hr
-    %p.notice= notice
-    %p.alert= alert
 
     = yield
-
-    %footer
-      %p= social_share_button_tag("Photo app!", :url => "http://wdi-7-photo-app.herokuapp.com/")
-
 
     /   %p.footer 
     /     |
