@@ -28,6 +28,9 @@ jQuery(document).ready(function () {
     function snapshot(event) {
       event.preventDefault();
 
+      $('#screenshot-canvas').toggleClass('dispnone')
+      $('#webcam').toggleClass('dispnone')
+
       canvas.width = video.videoWidth;
       canvas.height = video.videoHeight;
       //  canvas.width = 300 didn't work the canvas was that size but the image was badly cropped

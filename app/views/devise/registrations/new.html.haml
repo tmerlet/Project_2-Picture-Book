@@ -26,9 +26,10 @@
       %button#showwebcam-button Use the Webcam
       #video.dispnone  
         %video#webcam{:autoplay => "", :width => "300"}
-        %canvas#screenshot-canvas
-        %br
+        %canvas#screenshot-canvas.dispnone
         %button#screenshot-button Capture
+        
+        
       %div
         = f.label :password
         %br/
