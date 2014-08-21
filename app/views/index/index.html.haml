@@ -1,9 +1,8 @@
+%h1 APP
 .header_div
-  %h1 APP
-
-#random_image
-  - @photos.each do |photo|
-    .image_info
-      = image_tag photo.image
-      %p= photo.location
-      %p= photo.description
+  #random_image
+    - @photos.each do |photo|
+      .image_info
+        = image_tag photo.image
+        %p= photo.location
+        %p= photo.description

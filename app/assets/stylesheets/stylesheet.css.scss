@@ -4,6 +4,7 @@ $photo_back: #FFF6EC;
   font-family: 'Permanent Marker', cursive;
 }
 
+
 body {
   background: url('wood_background.jpg') fixed;
 }
@@ -40,16 +41,6 @@ td {
       color: darken($nav_color, 50%)
     }
 }
-
-/*.header_div {
-  width: 100%;
-  margin-bottom: 30px;
-  height: 100px;
-  border: 20px white solid;
-  background: white;
-  opacity: 0.6;
-  text-align: center;
-}*/
 
 #show_image {
   margin-top: 100px;
@@ -164,7 +155,6 @@ footer {
   position: fixed;
   bottom: 0px;
   width: 100%;
-  
   @include marker_pen
 }
 
@@ -231,6 +221,14 @@ footer {
     p button:last-child {
       float: left;
     }
+    #map-canvas {
+          float: right;
+          margin-top: 1%;
+          margin-right: 1%;
+          left: 55%;
+          top: 20%;
+          position: fixed !important;
+        }
     .showing_image_info {
       display: inline-block;
       width: 40%;
@@ -239,6 +237,7 @@ footer {
       vertical-align: bottom;
       margin: 10px;
       padding: 3% 3% 2% 3%;
+      float: left;
       @include marker_pen;
       font-size: 20px;
       text-align: left;
@@ -248,13 +247,8 @@ footer {
           height: 100%;
           display: block;
           }
+          
     }
-}
-
-#map-canvas {
-  float: right;
-  margin-top: 10%;
-  margin-right: 5%;
 }
 
 .bottom_buttons {
