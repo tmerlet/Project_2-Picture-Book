@@ -5,6 +5,8 @@
 %html
   %head
     %title Photoapp
+    %link{:href => 'http://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.1/normalize.min.css'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Permanent+Marker', :rel => 'stylesheet', :type => 'text/css'}
     %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css", :rel => "stylesheet"}
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
@@ -20,12 +22,12 @@
       })
       })
     / ###################### code for google maps ################################
+
     %meta{:content => "initial-scale=1.0, user-scalable=no", :name => "viewport"}/
     :css
       html { height: 100% }
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
-    
 
   %body 
     %header
@@ -38,13 +40,11 @@
             Browse
             %ul
               %li
-                %a{:href => "users"} Users
+                = link_to "users", users_path
               %li
-                %a{:href => "albums"} Albums
+                = link_to "albums", albums_path
               %li
-                %a{:href => "photos"} Photos
-              %li
-                %a{:href => "tags"} Tags
+                = link_to "tags", tags_path
           %li
             = link_to "My profile", users_path
           %li
@@ -73,4 +73,19 @@
 
     = yield
 
+    %footer
+      %p.footer 
+        |
+      %p.footer
+        =link_to 'about', page_path('about')
+      %p.footer 
+        |
+      %p.footer
+        =link_to 'terms & conditions', page_path('terms')
+      %p.footer 
+        |
+      %p.footer
+        Copyright 2014, Alex Piers & Toby
+      %p.footer 
+        |
 
