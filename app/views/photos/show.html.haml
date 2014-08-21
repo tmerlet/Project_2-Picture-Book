@@ -1,3 +1,6 @@
+= @photo.image.url 
+
+
 :javascript
   window.photo = #{@photo.to_json}
 %p#notice= notice
@@ -60,4 +63,5 @@
             = link_to album_path(@album) do
               %i{class: "fa fa-arrow-left"}
     #map-canvas{:style => "width: 40%; height: 300px"}
+
 
