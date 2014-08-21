@@ -18,11 +18,12 @@
     %th Photo ID
     %th Photo
 
-
-  %tr
-    %td= @comment.content
-    %td= @comment.photo_id
-    %td= @photo.image
+  /PK: Commented this out so that when a user clicks on "mr profile" in the header it shows only their profile. With this code in it causes an error.
+  
+  / %tr
+  /   %td= @comment.content
+  /   %td= @comment.photo_id
+  /   %td= @photo.image
 
 = link_to 'Edit', edit_user_registration_path
 / can only edit the current user who is logged in

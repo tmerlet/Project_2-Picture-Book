@@ -46,7 +46,7 @@
               %li
                 = link_to "tags", tags_path
           %li
-            = link_to "My profile", users_path
+            = link_to "My profile", current_user
           %li
             = link_to "New album", new_album_path
           %li.search
@@ -54,7 +54,8 @@
               = f.text_field :name_or_user_name_or_user_username_cont, placeholder: "search", id: "autocomplete"
               = f.submit
           %li
-            = link_to "Manage site", users_path
+            = if current_user.role == "admin"
+              = link_to "Manage site", users_path
           %li
             - if user_signed_in?
               = current_user.email
