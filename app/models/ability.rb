@@ -15,7 +15,7 @@ class Ability
         u.id == user.id
       end 
       can [:edit, :update, :destroy], Photo do |photo|
-        photo.user_id == user.id
+        album.photo.user.id == user.id
       end
       can :create, Photo do |photo|
         album.user_id == user.id
