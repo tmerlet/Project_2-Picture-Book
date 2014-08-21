@@ -6,19 +6,24 @@ $nav_color: #990000;
 header {
   position: fixed;
   top: 0px; 
-  width: 100%;
-  text-align: center; 
+  width: 100%; 
   background: $nav_color;
   max-height: 100px;
+  /*text-align: center;*/
 }
+
 
 nav {
   display: fixed;
   max-height: 100px;
+  width: 100%;
+  h1 {
+    color: white;
+  }
 }
 
 .nav {
-  text-align: left;
+  /*text-align: left;*/
   display: inline;
   margin: 0;
   list-style: none;
@@ -26,7 +31,7 @@ nav {
 
 .nav li {
   display: inline-block;
-  margin-right: -4px;
+  /*margin-right: -4px;*/
   position: relative;
   padding: 13px 20px;
   cursor: pointer;
@@ -57,7 +62,7 @@ ul li ul {
   position: absolute;
   top: 48px;
   left: 0;
-  width: 100px;
+  /*width: 100px;*/
   display: none;
   opacity: 0;
   visibility: hidden;
@@ -66,7 +71,7 @@ ul li ul {
 .nav li ul li { 
   background: $nav_color; 
   display: block; 
-  color: $nav_color
+  color: white;
 }
 
 .nav li ul li:hover { 
