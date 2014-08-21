@@ -10,7 +10,7 @@
       %tr
         %td= link_to user.name, user
         /   %td= user.username
-        %td= image_tag(user.profile_image.thumb.url)
+        %td= image_tag(user.profile_image.thumb.url) if user.profile_image.present?
         %td= link_to 'Destroy', user, :method => :delete, :confirm => 'Are you sure?' if can? :destroy, user
 
   / already has a default class of 'pagination' AW
