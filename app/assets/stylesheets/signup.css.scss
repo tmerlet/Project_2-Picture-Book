@@ -68,7 +68,7 @@ $photo_back: #FFF6EC;
 /* added by toby for webcam, can be moved around: */
 
 
-video {
+#webcam {
   /*width: 307px;*/
   width: 300px;
   /*height: 250px;*/
@@ -76,11 +76,10 @@ video {
   border: 1px solid #ccc;
 }
 
-canvas {
+#screenshot-canvas {
   /*width: 307px;*/
   /*height: 250px;*/
   width: 300px;
   background: rgba(255,255,255,1);
   border: 1px solid #ccc;
 }
-
