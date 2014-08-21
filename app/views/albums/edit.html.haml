@@ -1,7 +1,10 @@
-%h1 Editing album
+#album_text
+  %h1 Edit album
 
-= render 'form'
+.index
+  #index_element
+    = render 'form'
 
-= link_to 'Show', @album
-\|
-= link_to 'Back', albums_path
+    = link_to 'Show', @album
+    \|
+    = link_to 'Back', albums_path

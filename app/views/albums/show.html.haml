@@ -5,13 +5,13 @@
     %li=@album.name    
     %i=@album.description
     %br
-    \|
+    \
     = link_to 'Upload Photos', new_album_photo_path(@album) if can? :edit, @album
-    \|
+    \
     = link_to 'Edit', edit_album_path(@album) if can? :edit, @album
-    \|
+    \
     = link_to 'Back', albums_path
-    \|
+    \
 
 #random_image
   - @photos.each do |photo|

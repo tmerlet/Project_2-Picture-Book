@@ -7,32 +7,21 @@ Photoapp::Application.routes.draw do
     get 'page/:page', action: :index, on: :collection
   end
 
-
   resources :ratings
 
-
   resources :comments
-
 
   resources :tags
 
   resources :index, :only => [:show, :index] 
 
-  #PK need to amend this as only need index and show route (and the show route is already displayed below as the root page)
-      # AW sorted this
-
   root :to => 'index#show'
-
-
-  # get 'pages/home' => 'high_voltage/pages#show', id: 'home'
 
   resources :albums do 
     resources :photos 
   end
-
-
-  
-  # root to: "albums#index"
+    # nested routes
+    # to access a photo you need to give the path both an album id and a photo id
 
 
   # The priority is based upon order of creation:

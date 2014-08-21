@@ -57,8 +57,9 @@ class PhotosController < ApplicationController
     @album = Album.find(params[:album_id])
     @photo = @album.photos.new(params[:photo])
     
-      if @photo.save  
-
+      if @photo.save 
+        # had to override to use gem and multiphoto upload 
+        # there is the manual input of json, found under views/photos/create.json.jbuilder
       else
         render :json => { "errors" => @photo.errors } 
       end
@@ -75,6 +76,8 @@ class PhotosController < ApplicationController
     all_tags = tags.map do |tag|
           Tag.find_or_create_by_name(tag)
     end
+      # if the tag already exists, asign that to the photo
+      # if the tag does not already exist, create a new one
     
     @photo.tags = all_tags
 

@@ -4,7 +4,6 @@
 .index
   %table
     %tr
-      %th User
       %th Album 
       %th Description
       %th
@@ -12,9 +11,6 @@
       %th
     - @albums.each do |album|
       %tr
-      %td= album.user.name
-      / show which user the album belongs to
-      / would be good to link this to the user_show page
       %td= link_to album.name, album
       %td= album.description
       %td= link_to 'Upload Photos', new_album_photo_path(album) if can? :edit, album
