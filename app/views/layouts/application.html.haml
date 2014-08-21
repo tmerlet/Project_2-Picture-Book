@@ -30,6 +30,12 @@
       body { height: 100%; margin: 0; padding: 0 }
       #map-canvas { height: 100% }
 
+    %meta{:content => "initial-scale=1.0, user-scalable=no", :name => "viewport"}/
+    :css
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0 }
+      #map-canvas { height: 100% }
+    
   %body 
     %header
       %nav
@@ -41,11 +47,11 @@
             Browse
             %ul
               %li
-                = link_to "users", users_path
+                %a{:href => "users"} Users
               %li
-                = link_to "albums", albums_path
+                %a{:href => "albums"} Albums
               %li
-                = link_to "tags", tags_path
+                %a{:href => "tags"} Tags
           %li
             = link_to "My profile", users_path
           %li
@@ -74,19 +80,19 @@
 
     = yield
 
-    %footer
-      %p.footer 
-        |
-      %p.footer
-        =link_to 'about', page_path('about')
-      %p.footer 
-        |
-      %p.footer
-        =link_to 'terms & conditions', page_path('terms')
-      %p.footer 
-        |
-      %p.footer
-        Copyright 2014, Alex Piers & Toby
-      %p.footer 
-        |
+    / %footer
+    /   %p.footer 
+    /     |
+    /   %p.footer
+    /     =link_to 'about', page_path('about')
+    /   %p.footer 
+    /     |
+    /   %p.footer
+    /     =link_to 'terms & conditions', page_path('terms')
+    /   %p.footer 
+    /     |
+    /   %p.footer
+    /     Copyright 2014, Alex Piers & Toby
+    /   %p.footer 
+    /     |
 
