@@ -3,15 +3,15 @@ $nav_color: #990000;
   font-family: 'Permanent Marker', cursive;
 }
 
+
 header {
   position: fixed;
   top: 0px; 
   width: 100%; 
   background: $nav_color;
   max-height: 100px;
-  /*text-align: center;*/
+  z-index: 1000;
 }
-
 
 nav {
   display: fixed;
@@ -23,7 +23,6 @@ nav {
 }
 
 .nav {
-  /*text-align: left;*/
   display: inline;
   margin: 0;
   list-style: none;
