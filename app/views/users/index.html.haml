@@ -16,11 +16,8 @@
         / - if can? :manage, :all 
         /   %td
         /     =form_for user do |f|
-        /       = f.label :role
-        /       = f.collection_select :role, User.all, :id, :role
+        /       = f.collection_select :role, [:user, :admin], :id, :role
         /       = f.submit
-
-
 
   / already has a default class of 'pagination' AW
   = paginate @users
