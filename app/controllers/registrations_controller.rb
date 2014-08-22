@@ -1,7 +1,15 @@
 class RegistrationsController < Devise::RegistrationsController
 
 
+# this registration controller was setup to take control of elements of the devise controller.  the routes also had to be changed. 
   def create
+    super
+
+    @user.profile_image = uploaded_picture(params[:canvasimage])
+    @user.save
+  end
+
+  def update
     super
 
     @user.profile_image = uploaded_picture(params[:canvasimage])
