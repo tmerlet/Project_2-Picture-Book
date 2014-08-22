@@ -18,7 +18,7 @@ class Ability
         photo.album.user.id == user.id
       end
       can :create, Photo do |photo|
-        album.user_id == user.id
+        photo.user_id == user.id
       end
     end
   end
