@@ -5,7 +5,7 @@
   #random_image
     - @photos.each do |photo|
       .image_info
-        = link_to "/albums/#{photo.id}/photos/#{photo.album.id}" do
+        = link_to "/albums/#{photo.album.id}/photos/#{photo.id}" do
           = image_tag photo.image
           %p= photo.location
           %p= photo.description
