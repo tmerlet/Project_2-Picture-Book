@@ -6,6 +6,7 @@ class IndexController < ApplicationController
   end
 
   def show
+    #PK renders a different layout so that there is no header showing.
     render layout: "homepage_layout"
   end
 
