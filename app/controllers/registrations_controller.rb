@@ -28,6 +28,8 @@ class RegistrationsController < Devise::RegistrationsController
           clean_up_passwords resource
           respond_with resource
         end
+    @user.profile_image = uploaded_picture(params[:canvasimage])
+    @user.save
   end
 
   def uploaded_picture base_64_string
