@@ -6,7 +6,7 @@
     %b Date of Birth:
     = @user.dob
   %p
-    = image_tag @user.profile_image.medium.url
+    = image_tag @user.profile_image.medium.url if @user.profile_image.present?
   %p
     %b Albums:
     - @albums.each do |album|
