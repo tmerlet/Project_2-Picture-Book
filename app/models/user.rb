@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :ratings
   has_many :albums
 
+  #PK :set_default_role sets the default role of as user to "user". If a user is not an admin they will automatically be a "user".
   before_create :set_default_role
 
   # Include default devise modules. Others available are:

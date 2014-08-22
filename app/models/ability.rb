@@ -1,6 +1,8 @@
 class Ability
   include CanCan::Ability
 
+  #PK admins can do anything, users are limited to :read all (ie. can view the index and show pages) as well as editing and destroying their own material.
+
   def initialize(user)
     user ||= User.new
     if user.role? :admin

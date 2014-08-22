@@ -14,6 +14,7 @@
     = javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyCJ1zg7XkoaEyge8Py3jbn9fgTZvq5_QIU"
     = csrf_meta_tags
     %script{:type=>"text/javascript"}
+      / PK below function is for the autocomplete in the search bar. Returns an array of all users and albums which is then linked (below) to the search bar.
       $(function(){
       users = #{raw User.all.map{|user| user.name}.to_json};
       albums = #{raw Album.all.map{|album| album.name}.to_json};
