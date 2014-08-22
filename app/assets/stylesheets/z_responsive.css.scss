@@ -22,10 +22,27 @@ $nav_color: #990000;
       margin-top: 200px;
     }
 
+
     #random_image {
       .image_info {
         width: 40%;
       }
+    }
+
+     .home_box {
+      width: 40%;
+          }
+
+      #album_text {
+      margin-top: 150px;
+      width: 80%;
+        ul {
+          height: 200px;
+        }
+        i, a {
+          float: right;
+          margin-right: 50px;
+        }
     }
 }
 
@@ -61,5 +78,23 @@ $nav_color: #990000;
 
     #showing_image, #map-canvas {
       clear: none;
+    }
+
+    .home_box {
+      width: 80%;
+      margin-top: 50px;
+      height: 110;
+          }
+
+    #album_text {
+      margin-top: 250px;
+      width: 80%;
+        ul {
+          height: 200px;
+        }
+        i, a {
+          float: right;
+          margin-right: 50px;
+        }
     }
 }
