@@ -1,3 +1,5 @@
+// this javascrip file allows a user to 'like' and 'dislike' a photo...  you can also unlike, and undislike, in order to return to a 'neutral' position, but you can't like and dislike at the same time!  -TM
+
 
 
 function request(method, url, data){
@@ -9,6 +11,7 @@ function request(method, url, data){
   })
 }
 
+//  this is the main function for controlling 'disliking' a photo, or in plain english, giving it a big thumbs down.  
 function unlikeRating(){
   $this = $(this)
   if ($this.children("i").hasClass("fa-thumbs-o-down")){
@@ -18,9 +21,9 @@ function unlikeRating(){
   if ($this.children("i").hasClass("fa-thumbs-down")){
     removeUnlikeRating();
   }
-  // $this.children("i").toggleClass("fa-thumbs-o-down").toggleClass("fa-thumbs-down")
 }
 
+// this function adds a thumbs down
 function addUnlikeRating(){
   $numberOfUnlikes = parseInt($('#number_of_unlikes').text())
   request("POST", "/ratings", {
@@ -35,6 +38,7 @@ function addUnlikeRating(){
   })
 }
 
+// this functions removes a thumbs down. 
 function removeUnlikeRating(){
   $numberOfUnlikes = parseInt($('#number_of_unlikes').text())
   unlikeratingId = $('#unlike').children("i").data("unlikerating-id");
@@ -45,6 +49,7 @@ function removeUnlikeRating(){
   })
 }
    
+// this function controls the 'like' rating, or the thumbs up!    
 function likeRating(){
   $this = $(this)
   $numberOfLikes = parseInt($('#number_of_likes').text())
@@ -60,6 +65,7 @@ function likeRating(){
   // $this.children("i").toggleClass("fa-thumbs-o-up").toggleClass("fa-thumbs-up")
 }
 
+// adds a thumbs up.
 function addLikeRating(){
   $numberOfLikes = parseInt($('#number_of_likes').text())
   request("POST", "/ratings", {
@@ -74,6 +80,7 @@ function addLikeRating(){
   })
 }
 
+// removes a thumbs up. 
 function removeLikeRating(){
   $numberOfLikes = parseInt($('#number_of_likes').text())
   likeratingId = $('#like').children("i").data("likerating-id");
@@ -83,7 +90,7 @@ function removeLikeRating(){
   })
 }
 
-
+// checks if a user clicks on thumps up or down
 $(function(){
   $('#like').on('click', likeRating)
   $('#unlike').on('click', unlikeRating)
